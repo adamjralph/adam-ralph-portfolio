@@ -1,12 +1,35 @@
+---
+const build = new Date().toLocaleDateString();
+---
+
 <footer class="footer">
-  <h3 class="footer__heading">Built with Astro and Neflify</h3>
+  <p>Latest build: <span>{build}</span></p>
+  <img
+    src="https://user-images.githubusercontent.com/3611928/167888733-9bf21eda-d051-46f3-9184-12b14e21a10a.png"
+    alt=""
+  />
 </footer>
 
 <style>
   .footer {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    margin-block-end: 3rem;
     margin-inline: 2rem;
   }
   .footer__heading {
     text-align: center;
+  }
+  img {
+    max-width: 15rem;
+  }
+  p {
+    display: inline-block;
+    color: var(--color-highlight);
+  }
+  span {
+    color: var(--color-fg);
   }
 </style>
