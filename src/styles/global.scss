@@ -1,0 +1,278 @@
+:root {
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+  --text-width-block: clamp(15rem, 20ch + 30vh, 35rem);
+  // --text-width-block: 35ch;
+
+  --font-size-link-mobile: 1.2rem;
+
+  /* Theme colors */
+  --color-highlight: #1b4bf7;
+  --color-highlight-light: #0fbffc;
+  --color-highlight-deep: #5b0ffc;
+  --color-text: hsl(12, 5%, 4%);
+  --color-border: hsl(17, 24%, 90%);
+
+  /* Dark light */
+  --color-fg: #ffffffe3;
+  --color-bg: #1b1b1b;
+
+  /* Social colors */
+  --color-twitter: #1d9bf0;
+  --color-youtube: #ff0000;
+  --color-github: #727272;
+  --theme-gradient: linear-gradient(0deg, #5b0ffc, #0fbffc);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,100&display=swap");
+/* Reset thanks to Josh Comeau
+https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  font-family: "Barlow", sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+ 10. My additions
+*/
+
+/*
+Links
+*/
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-fg);
+}
+// // Breakpoints
+// $mobile: 400px;
+// $tablet: 640px;
+// $desktop: 900px;
+
+// Media queries
+// @mixin for-mobile($breakpoint) {
+//   @media (max-width: $breakpoint) {
+//     @content;
+//   }
+// }
+// @mixin for-tablet($breakpoint) {
+//   @media (min-width: $breakpoint) {
+//     @content;
+//   }
+// }
+// @mixin for-desktop($breakpoint) {
+//   @media (min-width: $breakpoint) {
+//     @content;
+//   }
+// }
+
+// Page container
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: auto;
+  padding-inline: 2rem;
+  //   @include media.for-tablet($tablet) {
+  //     position: relative;
+  //     width: 80%;
+  //     max-width: 1220px;
+  //     margin: auto;
+  //   }
+  &--mobile {
+    width: 100%;
+  }
+}
+// @media (min-width: 40rem) {
+//   :root {
+//     --fs-xl: 7rem;
+//     --fs-600: 2rem;
+//     --fs-500: 1.25rem;
+//     --fs-400: 1.125rem;
+//   }
+// }
+
+@keyframes pulse {
+  0%,
+  100% {
+    background-position-y: 0%;
+  }
+  50% {
+    background-position-y: 80%;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-gradient {
+  font-weight: 900;
+  background-image: var(--theme-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  border-radius: 0.4rem;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.nav__link {
+  margin-inline: auto;
+  margin-block-start: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: cornflowerblue;
+  }
+
+  &--text {
+    font-size: var(--font-size-link-mobile);
+  }
+}
+.nav__btn {
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  border: 2px inset var(--color-fg);
+  border-radius: 4px;
+  font-size: var(--font-size-link-mobile);
+  transition: color 0.5 ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-fg);
+    border: 2px inset var(--color-fg);
+    color: var(--color-bg);
+    filter: drop-shadow(0 0 0.3rem var(--color-fg));
+  }
+}
+
+.header-social {
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}
+
+.social__link {
+  padding-inline: 1rem;
+  animation: fadeInAnimation ease-in 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1.5s;
+}
+
+.header__social {
+  display: flex;
+}
+
+.header__social__icon {
+  color: var(--color-bg);
+  &--twitter,
+  &--youtube,
+  &--github {
+    transition: color 0.3s ease-in-out;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  &--twitter:hover,
+  &--twitter:focus {
+    color: var(--color-twitter);
+  }
+  &--youtube:hover,
+  &--youtube:focus {
+    color: var(--color-youtube);
+  }
+
+  &--github {
+    border-radius: 50%;
+  }
+  &--github:hover,
+  &--github:focus {
+    color: var(--color-highlight-deep);
+    background-color: var(--color-fg);
+  }
+}

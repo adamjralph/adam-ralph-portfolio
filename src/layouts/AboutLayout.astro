@@ -1,0 +1,132 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { heading, about, bio } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead />
+    <style lang="scss">
+      .about-container {
+        display: grid;
+        width: 100%;
+        padding-inline: 2rem;
+      }
+
+      .about-heading {
+        align-self: center;
+        margin-block-start: 4rem;
+        margin-inline: auto;
+      }
+
+      .about-links {
+        display: grid;
+        gap: 0.4rem;
+        justify-content: center;
+        grid-template-columns: 6rem 6rem;
+        margin-block-start: 1rem;
+      }
+
+      .about-text {
+        margin-block-start: 4rem;
+        margin-inline: auto;
+        font-size: var(--font-size-base);
+        max-width: var(--text-width-block);
+      }
+
+      .card > * {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+      }
+
+      .card {
+        display: grid;
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        height: 3rem;
+        max-height: 80px;
+        max-width: 150px;
+        margin-inline: auto;
+        border: 1px solid var(--color-highlight);
+        border-radius: 5px;
+        margin-block: 3rem;
+      }
+
+      .color-layer {
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+        width: 15%;
+        height: 300%;
+        animation: borderRotate 3s linear infinite;
+        z-index: -1;
+        background: linear-gradient(
+          90deg,
+          var(--color-highlight-light) 0%,
+          var(--color-highlight-deep) 100%
+        );
+      }
+
+      @keyframes borderRotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .inner-layer {
+        background-color: var(--color-bg);
+        margin: 0.2rem;
+        border: 1px inset var(--color-highlight);
+        border-radius: 5px;
+      }
+
+      .text-layer {
+        align-self: center;
+        justify-self: center;
+        margin-block-end: 0.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <div class="about-container">
+      <h1 class="about-heading">{heading}</h1>
+      <div class="about-links">
+        <a
+          href="/about"
+          class="nav__btn-text about-links__btn"
+          ><button
+            class="btn nav__btn nav__link"
+            style={about}>about</button
+          >
+        </a>
+        <a
+          href="/bio"
+          class="nav__btn-text about-links__btn"
+          ><button
+            style={bio}
+            class="btn nav__btn nav__link"
+            id="about-active">bio</button
+          >
+        </a>
+      </div>
+      <div class="about-text">
+        <slot />
+      </div>
+      <a href="/">
+        <div class="card">
+          <div class="color-layer"></div>
+          <div class="inner-layer"></div>
+          <h2 class="text-layer">lets talk</h2>
+        </div>
+      </a>
+    </div>
+    <Footer />
+  </body>
+</html>
