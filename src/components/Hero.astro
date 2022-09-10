@@ -2,82 +2,80 @@
 import("../styles/header.scss");
 ---
 
-<div class="container-mobile">
-  <main
-    id="main"
-    class="main"
+<main
+  id="main"
+  class="main"
+>
+  <section
+    id="hero"
+    class="hero"
   >
-    <section
-      id="hero"
-      class="hero"
-    >
-      <!-- <h1 class="hero__heading">Hello adventurer,</h1> -->
-      <!-- <img
+    <!-- <h1 class="hero__heading">Hello adventurer,</h1> -->
+    <!-- <img
         class="profile-image"
         src="../images/adam-removebg-preview.png"
         alt="profile image"
       /> -->
-      <div class="hero__content">
-        <div class="hero-text">
-          <div class="hero__image"></div>
-          <h1 class="hero__heading hero__heading--2">
-            Building<span class="text-gradient">
-              <a href="#"> internet things</a>
-            </span>
-          </h1>
-          <p class="hero__text">
-            hand-crafted internet experences for profit and pleasure
-            <!-- <br />
+    <div class="hero__content">
+      <div class="hero-text">
+        <div class="hero__image"></div>
+        <h1 class="hero__heading hero__heading--2">
+          Building<span class="text-gradient">
+            <a href="#"> internet things</a>
+          </span>
+        </h1>
+        <p class="hero__text">
+          hand-crafted internet experences for profit and pleasure
+          <!-- <br />
             <br />
             People and code are not alike. I have spent all of my life honing my
             human skills. Now it's time to being my knowledge to the world of tech -->
-          </p>
-        </div>
-        <a
-          href="#contact"
-          class="hero__contact"
-          ><button class="btn nav__btn nav__link hero__btn">lets code</button>
-        </a>
+        </p>
       </div>
-      <div class="horizontal-line"></div>
-      <!-- Social links -->
-      <div class="hero__social header__social">
-        <!-- Twitter -->
-        <a
-          href="http://twitter.com/adamjralph"
-          class="social__link social__link--twitter"
-        >
-          <i class="fa-brands fa-twitter fa-xl header__social__icon--twitter"
-          ></i>
-        </a>
-        <!-- Youtube-->
-        <a
-          href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
-          class="social__link social__link--youtube"
-        >
-          <i class="fa-brands fa-youtube fa-xl header__social__icon--youtube"
-          ></i>
-        </a>
-        <!-- Github -->
-        <a
-          href="https://github.com/adamjralph"
-          class="social__link social__link--github"
-        >
-          <i class="fa-brands fa-github fa-xl header__social__icon--github"></i>
-        </a>
-      </div>
-      <div class="horizontal-line"></div>
-    </section>
-  </main>
-</div>
+      <a
+        href="#contact"
+        class="hero__contact"
+        ><button class="btn nav__btn nav__link hero__btn">lets code</button>
+      </a>
+    </div>
+    <div class="horizontal-line"></div>
+    <!-- Social links -->
+    <div class="hero__social header__social">
+      <!-- Twitter -->
+      <a
+        href="http://twitter.com/adamjralph"
+        class="social__link social__link--twitter"
+      >
+        <i class="fa-brands fa-twitter fa-xl header__social__icon--twitter"></i>
+      </a>
+      <!-- Youtube-->
+      <a
+        href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
+        class="social__link social__link--youtube"
+      >
+        <i class="fa-brands fa-youtube fa-xl header__social__icon--youtube"></i>
+      </a>
+      <!-- Github -->
+      <a
+        href="https://github.com/adamjralph"
+        class="social__link social__link--github"
+      >
+        <i class="fa-brands fa-github fa-xl header__social__icon--github"></i>
+      </a>
+    </div>
+    <div class="horizontal-line"></div>
+  </section>
+</main>
 
 <style>
+  .main {
+    margin-block-start: 2rem;
+  }
   .hero {
     display: flex;
     flex-direction: column;
     position: relative;
     opacity: 1;
-    margin-block-start: 3rem;
     background-color: var(--color-bg);
     transition: opacity 0.3s ease;
   }
