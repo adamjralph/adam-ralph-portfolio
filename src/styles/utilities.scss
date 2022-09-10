@@ -38,3 +38,49 @@
     filter: drop-shadow(0 0 0.3rem var(--color-fg));
   }
 }
+
+.header-social {
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}
+
+.social__link {
+  padding-inline: 1rem;
+  animation: fadeInAnimation ease-in 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 1.5s;
+}
+
+.header__social {
+  display: flex;
+}
+
+.header__social__icon {
+  color: var(--color-bg);
+  &--twitter,
+  &--youtube,
+  &--github {
+    transition: color 0.3s ease-in-out;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  &--twitter:hover,
+  &--twitter:focus {
+    color: var(--color-twitter);
+  }
+  &--youtube:hover,
+  &--youtube:focus {
+    color: var(--color-youtube);
+  }
+
+  &--github {
+    border-radius: 50%;
+  }
+  &--github:hover,
+  &--github:focus {
+    color: var(--color-highlight-deep);
+    background-color: var(--color-fg);
+  }
+}

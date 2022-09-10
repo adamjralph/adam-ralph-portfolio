@@ -1,5 +1,6 @@
 ---
 import ThemeSelection from "../components/ThemeSelection.astro";
+import SocialLinks from "./SocialLinks.astro";
 import "../styles/header.scss";
 ---
 
@@ -26,29 +27,8 @@ import "../styles/header.scss";
       class="nav__btn-text"
       ><button class="btn nav__btn nav__link">Lets Talk</button>
     </a>
-    <!-- Social links -->
-    <div class="header-social">
-      <!-- Twitter -->
-      <a
-        href="http://twitter.com/adamjralph"
-        class="social__link social__link--twitter"
-      >
-        <i class="fa-brands fa-twitter fa-xl header__social__icon--twitter"></i>
-      </a>
-      <!-- Youtube-->
-      <a
-        href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
-        class="social__link social__link--youtube"
-      >
-        <i class="fa-brands fa-youtube fa-xl header__social__icon--youtube"></i>
-      </a>
-      <!-- Github -->
-      <a
-        href="https://github.com/adamjralph"
-        class="social__link social__link--github"
-      >
-        <i class="fa-brands fa-github fa-xl header__social__icon--github"></i>
-      </a>
+    <div class="social-mobile">
+      <SocialLinks />
     </div>
   </nav>
   <nav class="nav">
@@ -75,6 +55,12 @@ import "../styles/header.scss";
 </div>
 
 <style lang="scss">
+  .social-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    padding-block-start: 1.5rem;
+  }
   .hamburger-menu {
     display: flex;
     align-items: center;
@@ -96,6 +82,7 @@ import "../styles/header.scss";
     background: var(--color-bg);
     left: 0;
     top: 0;
+    z-index: 1;
   }
 
   .hamburger,
@@ -169,5 +156,6 @@ import "../styles/header.scss";
   .logo-mobile {
     display: block;
     margin-block-start: 1.5rem;
+    z-index: 1;
   }
 </style>

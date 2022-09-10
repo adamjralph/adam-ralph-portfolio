@@ -1,5 +1,5 @@
 ---
-import("../styles/header.scss");
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <main
@@ -39,35 +39,21 @@ import("../styles/header.scss");
       </a>
     </div>
     <div class="horizontal-line"></div>
-    <!-- Social links -->
-    <div class="hero__social header__social">
-      <!-- Twitter -->
-      <a
-        href="http://twitter.com/adamjralph"
-        class="social__link social__link--twitter"
-      >
-        <i class="fa-brands fa-twitter fa-xl header__social__icon--twitter"></i>
-      </a>
-      <!-- Youtube-->
-      <a
-        href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
-        class="social__link social__link--youtube"
-      >
-        <i class="fa-brands fa-youtube fa-xl header__social__icon--youtube"></i>
-      </a>
-      <!-- Github -->
-      <a
-        href="https://github.com/adamjralph"
-        class="social__link social__link--github"
-      >
-        <i class="fa-brands fa-github fa-xl header__social__icon--github"></i>
-      </a>
+
+    <div class="social-hero">
+      <SocialLinks />
     </div>
+
     <div class="horizontal-line"></div>
   </section>
 </main>
 
 <style>
+  .social-hero {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
+  }
   .main {
     margin-block-start: 2rem;
   }

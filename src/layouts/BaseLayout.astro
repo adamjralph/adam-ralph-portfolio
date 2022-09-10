@@ -24,6 +24,7 @@ const { title, description } = Astro.props;
     <div class="wrapper">
       <HeaderLayout />
       <slot />
+
       <Footer />
     </div>
     <script>
@@ -52,9 +53,13 @@ const { title, description } = Astro.props;
         if (themeToggle) {
           addCss(":root {--color-bg: #ffffff}");
           addCss(":root {--color-fg: #1b1b1b}");
+          addCss(":root {--color-ds: #1b4bf7}");
+          addCss(":root {--color-ic: #ffffff}");
         } else {
           addCss(":root {--color-bg: #1b1b1b}");
           addCss(":root {--color-fg: #ffffff}");
+          addCss(":root {--color-ds: #ffffff}");
+          addCss(":root {--color-ic: #ffffff}");
         }
       }
       checkTheme();
