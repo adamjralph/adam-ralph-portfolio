@@ -196,41 +196,6 @@ a:visited {
   animation: pulse 4s ease-in-out infinite;
 }
 
-.nav__link {
-  margin-inline: auto;
-  margin-block-start: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease-in-out;
-
-  &:hover,
-  &:focus {
-    color: cornflowerblue;
-  }
-
-  &--text {
-    font-size: var(--font-size-link-mobile);
-  }
-}
-.nav__btn {
-  cursor: pointer;
-  width: 100%;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  border: 2px inset var(--color-fg);
-  border-radius: 4px;
-  font-size: var(--font-size-link-mobile);
-  transition: color 0.5 ease;
-
-  &:hover,
-  &:focus {
-    background-color: var(--color-fg);
-    border: 2px inset var(--color-fg);
-    color: var(--color-bg);
-    filter: drop-shadow(0 0 0.3rem var(--color-fg));
-  }
-}
-
 .header-social {
   margin-inline: auto;
   margin-block-start: 2rem;

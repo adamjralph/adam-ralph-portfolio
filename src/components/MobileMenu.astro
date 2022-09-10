@@ -1,0 +1,174 @@
+---
+import ThemeSelection from "../components/ThemeSelection.astro";
+import "../styles/header.scss";
+---
+
+<div class="hamburger-menu">
+  <button
+    class="nav-toggle"
+    aria-label="open navigation"
+  >
+    <span class="hamburger"></span>
+  </button>
+  <nav class="nav">
+    <ThemeSelection />
+    <a
+      href="/about"
+      class="nav__link nav__link--text">about</a
+    >
+    <a
+      href="#projects"
+      class="nav__link nav__link--text">projects</a
+    >
+
+    <a
+      href="#contact"
+      class="nav__btn-text"
+      ><button class="btn nav__btn nav__link">Lets Talk</button>
+    </a>
+    <!-- Social links -->
+    <div class="header-social">
+      <!-- Twitter -->
+      <a
+        href="http://twitter.com/adamjralph"
+        class="social__link social__link--twitter"
+      >
+        <i class="fa-brands fa-twitter fa-xl header__social__icon--twitter"></i>
+      </a>
+      <!-- Youtube-->
+      <a
+        href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
+        class="social__link social__link--youtube"
+      >
+        <i class="fa-brands fa-youtube fa-xl header__social__icon--youtube"></i>
+      </a>
+      <!-- Github -->
+      <a
+        href="https://github.com/adamjralph"
+        class="social__link social__link--github"
+      >
+        <i class="fa-brands fa-github fa-xl header__social__icon--github"></i>
+      </a>
+    </div>
+  </nav>
+  <nav class="nav">
+    <a
+      href="#about"
+      class="nav__link">about</a
+    >
+    <a
+      href="#projects"
+      class="nav__link">projects</a
+    >
+
+    <a
+      href="#contact"
+      class="nav__btn-text"
+      ><button class="btn nav__btn nav__link">Lets Talk</button>
+    </a>
+  </nav>
+  <div class="logo-mobile">
+    <a href="/">
+      <h1 class="text-gradient logo-mobile__heading">adam</h1>
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-start: 2rem;
+    height: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  // Nav toggle
+  .nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 2rem;
+    height: 2.5rem;
+    padding: 0;
+    margin-block-start: 2rem;
+    border-radius: 50%;
+    background: var(--color-bg);
+    left: 0;
+    top: 0;
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    height: 0.1rem;
+    background: var(--color-fg);
+    z-index: 1;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    width: 100%;
+  }
+
+  .hamburger::before {
+    transform: translateY(-7px);
+  }
+
+  .hamburger::after {
+    transform: translateY(5px);
+  }
+
+  .nav {
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    transform: translateX(-400px);
+    transition: transform 0.3s ease-in-out;
+    // display: none;
+    // @include media.for-tablet(width.$tablet) {
+    //   visibility: visible;
+    //   height: auto;
+    //   position: relative;
+    //   transform: translateX(-1);
+    //   transition: none;
+    //   grid-column-start: 2;
+    //   z-index: 0;
+    // }
+
+    &--visible {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      left: 0;
+      width: 100%;
+      min-height: 300px;
+
+      margin-block-start: 4rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-bg);
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+      z-index: 2;
+    }
+  }
+
+  .nav-transition {
+    padding-block-start: 0rem;
+    padding-inline: 0rem;
+    transition: padding 0.3s ease;
+  }
+
+  .logo-mobile {
+    display: block;
+    margin-block-start: 1rem;
+  }
+
+

@@ -1,0 +1,71 @@
+<div class="social">
+  <!-- Twitter -->
+  <a
+    href="http://twitter.com/adamjralph"
+    class="link link-twitter"
+  >
+    <i class="fa-brands fa-twitter fa-xl icon-twitter"></i>
+  </a>
+  <!-- Youtube-->
+  <a
+    href="https://www.youtube.com/channel/UCRMH3kvPD8o1Khssr4A8EWg"
+    class="link link-youtube"
+  >
+    <i class="fa-brands fa-youtube fa-xl icon-youtube"></i>
+  </a>
+  <!-- Github -->
+  <a
+    href="https://github.com/adamjralph"
+    class="link link-github"
+  >
+    <i class="fa-brands fa-github fa-xl icon-github"></i>
+  </a>
+</div>
+
+<style lang="scss">
+  .header-social {
+    margin-inline: auto;
+    margin-block-start: 2rem;
+  }
+
+  .social__link {
+    padding-inline: 1rem;
+    animation: fadeInAnimation ease-in 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: 1.5s;
+  }
+
+  .header__social {
+    display: flex;
+  }
+
+  .header__social__icon {
+    color: var(--color-bg);
+    &--twitter,
+    &--youtube,
+    &--github {
+      transition: color 0.3s ease-in-out;
+      margin-inline: 0;
+      padding-inline: 0;
+    }
+
+    &--twitter:hover,
+    &--twitter:focus {
+      color: var(--color-twitter);
+    }
+    &--youtube:hover,
+    &--youtube:focus {
+      color: var(--color-youtube);
+    }
+
+    &--github {
+      border-radius: 50%;
+    }
+    &--github:hover,
+    &--github:focus {
+      color: var(--color-highlight-deep);
+      background-color: var(--color-fg);
+    }
+  }
+</style>

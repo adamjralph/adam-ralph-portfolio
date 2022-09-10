@@ -1,0 +1,79 @@
+---
+import MobileMenu from "../components/MobileMenu.astro";
+import "../styles/header.scss";
+---
+
+<div class="container">
+  <header
+    id="header"
+    class="header"
+  >
+    <!-- Hamburger -->
+    <MobileMenu />
+    <!-- Logo -->
+
+    <!-- Navigation Tablet/Desktop -->
+    <div class="logo-desktop">
+      <h1 class="logo-desktop__heading">adam</h1>
+    </div>
+
+    <!-- Social links -->
+
+    <!-- Navigation -->
+  </header>
+</div>
+
+<script>
+  // Add styles
+  const addCss = (css: string) => {
+    const element = document.createElement("style");
+    element.innerText = css;
+    const newStyle = document.body.appendChild(element);
+    return newStyle;
+  };
+
+  // Dark/Light mode
+  const colorSchemeToggle = document.querySelector("input[name=checkbox]");
+
+  colorSchemeToggle.addEventListener("change", function () {
+    if (this.checked) {
+      localStorage.setItem("themeChange-8d23k88", "on");
+    } else {
+      localStorage.removeItem("themeChange-8d23k88");
+    }
+    checkTheme();
+  });
+
+  function checkTheme() {
+    let themeToggle = localStorage.getItem("themeChange-8d23k88");
+    if (themeToggle) {
+      addCss(":root {--color-bg: #ffffff}");
+      addCss(":root {--color-fg: #1b1b1b}");
+    } else {
+      addCss(":root {--color-bg: #1b1b1b}");
+      addCss(":root {--color-fg: #ffffff}");
+    }
+  }
+  checkTheme();
+
+  const hero = document.getElementById("hero");
+
+  function hideHero() {
+    if (hero.style.opacity === "0") {
+      hero.style.opacity = "1";
+    } else {
+      hero.style.opacity = "0";
+    }
+  }
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+
+  const navContainer = document.querySelector(".hamburger-logo");
+
+  navToggle.addEventListener("click", () => {
+    nav.classList.toggle("nav--visible");
+    navContainer.classList.toggle("nav-transition");
+    hideHero();
+  });
+</script>
