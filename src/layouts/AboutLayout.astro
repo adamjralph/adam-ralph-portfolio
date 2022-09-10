@@ -3,6 +3,7 @@ import MainHead from "../components/MainHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const { heading, about, bio } = Astro.props;
+const content = "test";
 ---
 
 <html lang="en">
@@ -97,11 +98,13 @@ const { heading, about, bio } = Astro.props;
     <Header />
     <div class="about-container">
       <h1 class="about-heading">{heading}</h1>
+
       <div class="about-links">
         <a
           href="/about"
           class="nav__btn-text about-links__btn"
           ><button
+            id="about-btn"
             class="btn nav__btn nav__link"
             style={about}>about</button
           >
