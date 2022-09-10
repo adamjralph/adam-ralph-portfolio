@@ -111,7 +111,6 @@ import "../styles/header.scss";
   .nav {
     visibility: hidden;
     opacity: 0;
-    top: 0;
     position: absolute;
     transform: translateX(-400px);
     transition: transform 0.3s ease-in-out;
@@ -133,9 +132,10 @@ import "../styles/header.scss";
       visibility: visible;
       opacity: 1;
       left: 0;
+      top: 0;
       width: 100%;
-      min-height: 19.75rem;
-
+      // min-height: 19.75rem;
+      height: 100vh;
       margin-block-start: 5rem;
       flex-direction: column;
       align-items: center;
