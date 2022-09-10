@@ -1,4 +1,5 @@
 ---
+import ThemeSelection from "./ThemeSelection.astro";
 import "../styles/header.scss";
 ---
 
@@ -7,16 +8,6 @@ import "../styles/header.scss";
     id="header"
     class="header"
   >
-    <!-- Dark/Light mode toggle-->
-    <div class="dark-light">
-      <i class="fa-sharp fa-regular fa-lightbulb fa-lg dark-light__icon"></i>
-
-      <input
-        class="dark-light__switch"
-        type="checkbox"
-        name="checkbox"
-      />
-    </div>
     <!-- Navigation mobile -->
     <div class="hamburger-logo">
       <button
@@ -26,6 +17,7 @@ import "../styles/header.scss";
         <span class="hamburger"></span>
       </button>
       <nav class="nav">
+        <ThemeSelection />
         <a
           href="/about"
           class="nav__link nav__link--text">about</a
