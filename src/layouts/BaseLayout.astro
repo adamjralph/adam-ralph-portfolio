@@ -11,11 +11,20 @@ const { title, description } = Astro.props;
       title={title}
       description={description}
     />
+    <!-- <style>
+      .wrapper {
+        display: grid;
+        width: min(90%, 1000px);
+        margin-inline: auto;
+      }
+    </style> -->
   </head>
 
   <body>
-    <HeaderLayout />
-    <slot />
-    <Footer />
+    <div class="wrapper">
+      <HeaderLayout />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
