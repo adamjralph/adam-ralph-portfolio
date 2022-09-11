@@ -43,10 +43,11 @@ const { btnText, btnPath } = Astro.props;
     animation: borderRotate 3s linear infinite;
     z-index: -1;
     background: linear-gradient(
-      90deg,
-      var(--color-highlight-light) 0%,
-      var(--color-highlight-deep) 100%
-    );
+        90deg,
+        var(--color-highlight) 0%,
+        var(--color-highlight-light)
+      )
+      100%;
   }
 
   @keyframes borderRotate {
