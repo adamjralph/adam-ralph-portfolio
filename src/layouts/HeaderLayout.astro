@@ -5,23 +5,21 @@ import "../styles/global.scss";
 import "../styles/header.scss";
 ---
 
-<div class="container">
-  <header
-    id="header"
-    class="header"
-  >
-    <div class="nav-small">
-      <MobileMenu />
-    </div>
-    <div class="nav-large">
-      <DesktopMenu />
-    </div>
+<header
+  id="header"
+  class="header"
+>
+  <div class="nav-small">
+    <MobileMenu />
+  </div>
+  <div class="nav-large">
+    <DesktopMenu />
+  </div>
 
-    <div class="logo-desktop">
-      <h1 class="logo-desktop__heading">adam</h1>
-    </div>
-  </header>
-</div>
+  <div class="logo-desktop">
+    <h1 class="logo-desktop__heading">adam</h1>
+  </div>
+</header>
 
 <style lang="scss">
   @use "../styles/mixins" as m;
