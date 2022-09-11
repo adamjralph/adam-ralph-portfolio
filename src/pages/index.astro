@@ -2,8 +2,17 @@
 // import MainHead from "../components/MainHead.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import CompProjects from "../components/CompProjects.astro";
 ---
 
 <BaseLayout>
   <Hero />
+  <h2 class="projects-title">Comiled with love</h2>
+  <CompProjects />
 </BaseLayout>
+
+<style>
+  .projects-title {
+    margin-block: 4rem;
+  }
+</style>

@@ -1,31 +1,47 @@
 ---
-const build = new Date().toLocaleString();
+const buildTime = new Date().toLocaleString();
+const copyYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <p>Latest build: <span>{build}</span></p>
   <img
+    class="astro-netlify"
     src="https://user-images.githubusercontent.com/3611928/167888733-9bf21eda-d051-46f3-9184-12b14e21a10a.png"
     alt=""
   />
+  <p class="build">Latest build:{buildTime}</p>
+  <p class="copyright">&copy; {copyYear}</p>
 </footer>
 
 <style>
   .footer {
-    display: flex;
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: space-around;
-    margin-block-end: 3rem;
-    margin-inline: 2rem;
   }
-  .footer__heading {
+
+  .footer * ~ * {
+    margin-block-start: 0.5rem;
+  }
+
+  .copyright {
+    grid-column: 1 / 3;
+    grid-row: 3;
     text-align: center;
   }
-  img {
-    max-width: 15rem;
+
+  .astro-netlify {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    max-width: 60%;
+    margin-inline: auto;
   }
-  p {
-    display: inline-block;
+  .build {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    text-align: center;
     color: var(--color-highlight);
   }
   span {
