@@ -1,5 +1,7 @@
 ---
 import MobileMenu from "../components/MobileMenu.astro";
+import DesktopMenu from "../components/DesktopMenu.astro";
+import "../styles/global.scss";
 import "../styles/header.scss";
 ---
 
@@ -8,17 +10,34 @@ import "../styles/header.scss";
     id="header"
     class="header"
   >
-    <!-- Hamburger -->
-    <MobileMenu />
-    <!-- Logo -->
+    <div class="nav-small">
+      <MobileMenu />
+    </div>
+    <div class="nav-large">
+      <DesktopMenu />
+    </div>
 
-    <!-- Navigation Tablet/Desktop -->
     <div class="logo-desktop">
       <h1 class="logo-desktop__heading">adam</h1>
     </div>
-
-    <!-- Social links -->
-
-    <!-- Navigation -->
   </header>
 </div>
+
+<style lang="scss">
+  @use "../styles/mixins" as m;
+  @use "../styles/variables" as w;
+
+  .nav-large {
+    display: block;
+    @include m.for-mobile(w.$desktop) {
+      display: none;
+    }
+  }
+
+  .nav-small {
+    display: none;
+    @include m.for-mobile(w.$desktop) {
+      display: block;
+    }
+  }
+</style>
