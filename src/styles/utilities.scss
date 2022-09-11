@@ -7,16 +7,10 @@
 .nav__link {
   position: relative;
   margin-inline: auto;
-  margin-block-start: 1rem;
+  // margin-block-start: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
   transition: color 0.3s ease-in-out;
-  padding-block-start: 1px;
-
-  // &:hover,
-  // &:focus {
-  //   color: cornflowerblue;
-  // }
 
   &--text {
     font-size: var(--font-size-link-mobile);
@@ -44,7 +38,7 @@
 .nav__btn {
   cursor: pointer;
   width: 100%;
-  margin-block-start: 1.5rem;
+  margin-block-start: 0.5rem;
   background-color: var(--color-bg);
   color: var(--color-fg);
   border: 2px inset var(--color-fg);
@@ -84,8 +78,8 @@
   &--youtube,
   &--github {
     transition: color 0.3s ease-in-out;
-    margin-inline: 0;
-    padding-inline: 0;
+    // margin-inline: 0;
+    // padding-inline: 0;
   }
 
   &--twitter:hover,

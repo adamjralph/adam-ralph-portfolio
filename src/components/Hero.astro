@@ -56,11 +56,6 @@ import "../styles/global.scss";
       margin-block-start: 5rem;
     }
 
-    // .hero__content > * ~ * {
-    //   border: 1px solid green;
-    //   margin-block-start: 2rem;
-    // }
-
     .hero {
       position: relative;
       height: 100vh;
@@ -82,8 +77,6 @@ import "../styles/global.scss";
       z-index: 1;
       @include m.for-mobile(w.$mobile) {
         align-items: flex-start;
-        // flex-direction: column;
-        // justify-content: center;
       }
     }
 
@@ -139,10 +132,8 @@ import "../styles/global.scss";
         linear-gradient(260deg, transparent 60%, var(--color-bg)),
         url("../images/adam-styled.png");
       height: 100%;
-      // width: 100%;
       width: 73%;
       height: 18rem;
-      // margin-inline: 1rem;
       background-position: 0 0;
       background-size: cover;
       z-index: -2;
@@ -151,7 +142,6 @@ import "../styles/global.scss";
       animation-fill-mode: backwards;
       animation-delay: 0.8s;
       @include m.for-mobile(w.$mobile) {
-        // position: absolute;
         top: 0;
         right: 0;
         margin-inline-end: 2rem;

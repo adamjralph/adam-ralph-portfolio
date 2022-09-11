@@ -118,27 +118,6 @@ a {
 a:visited {
   color: var(--color-fg);
 }
-// // Breakpoints
-// $mobile: 400px;
-// $tablet: 640px;
-// $desktop: 900px;
-
-// Media queries
-// @mixin for-mobile($breakpoint) {
-//   @media (max-width: $breakpoint) {
-//     @content;
-//   }
-// }
-// @mixin for-tablet($breakpoint) {
-//   @media (min-width: $breakpoint) {
-//     @content;
-//   }
-// }
-// @mixin for-desktop($breakpoint) {
-//   @media (min-width: $breakpoint) {
-//     @content;
-//   }
-// }
 
 // Page container
 .container {
@@ -146,24 +125,11 @@ a:visited {
   max-width: 1220px;
   margin: auto;
   padding-inline: 2rem;
-  //   @include media.for-tablet($tablet) {
-  //     position: relative;
-  //     width: 80%;
-  //     max-width: 1220px;
-  //     margin: auto;
-  //   }
+
   &--mobile {
     width: 100%;
   }
 }
-// @media (min-width: 40rem) {
-//   :root {
-//     --fs-xl: 7rem;
-//     --fs-600: 2rem;
-//     --fs-500: 1.25rem;
-//     --fs-400: 1.125rem;
-//   }
-// }
 
 @keyframes pulse {
   0%,
