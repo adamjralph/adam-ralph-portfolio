@@ -28,16 +28,16 @@ import "../styles/header.scss";
   @use "../styles/variables" as w;
 
   .nav-large {
-    display: block;
+    display: none;
     @include m.for-mobile(w.$desktop) {
-      display: none;
+      display: block;
     }
   }
 
   .nav-small {
-    display: none;
+    display: block;
     @include m.for-mobile(w.$desktop) {
-      display: block;
+      display: none;
     }
   }
 </style>
