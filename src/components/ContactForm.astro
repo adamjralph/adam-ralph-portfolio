@@ -43,7 +43,7 @@ const { justify } = Astro.props;
 </div>
 
 <style lang="scss">
-    @use "../styles/mixins" as m;
+  @use "../styles/mixins" as m;
   @use "../styles/variables" as w;
 
   .nav-large {
@@ -51,19 +51,19 @@ const { justify } = Astro.props;
   }
   
   .form-wrapper {
-    display: grid;
-    justify-content: center;
+    // display: grid;
+    // justify-content: center;
     // width: 100%;
     // margin-inline: auto;
   }
   .contact-form {
     display: grid;
-    place-content: center;
+    // place-content: center;
     width: 100%;
     max-width: 100%;
     margin-inline: auto;
     @include m.for-desktop(w.$desktop) {
-      min-width: 80%;
+      max-width: 60%;
     }
   }
 
@@ -83,7 +83,7 @@ const { justify } = Astro.props;
     letter-spacing: 1px;
     background-color: var(--color-fg);
     color: var(--color-bg);
-    border: 1px inset var(--color-fg);
+    // border: 1px inset var(--color-fg);
     padding: 0.5rem;
     border-radius: 0.1rem;
   }
