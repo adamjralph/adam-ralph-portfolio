@@ -7,6 +7,7 @@ const { justify } = Astro.props;
   style={`justify-content: ${justify};`}
 >
   <form
+    id="contact"
     class="contact-form"
     action="submit"
   >
@@ -26,7 +27,7 @@ const { justify } = Astro.props;
     <input
       name="phone"
       type="number"
-      placeholder="Email"
+      placeholder="Phone number"
     />
     <label for="message">Message</label>
     <textarea
@@ -34,7 +35,7 @@ const { justify } = Astro.props;
       placeholder="Message"
       id="message"
       cols="30"
-      rows="10"></textarea>
+      rows="7"></textarea>
     <button
       class="btn nav__btn"
       type="submit">Send</button
