@@ -43,15 +43,28 @@ const { justify } = Astro.props;
 </div>
 
 <style lang="scss">
+    @use "../styles/mixins" as m;
+  @use "../styles/variables" as w;
+
+  .nav-large {
+    display: none;
+  }
+  
   .form-wrapper {
     display: grid;
     justify-content: center;
+    // width: 100%;
+    // margin-inline: auto;
   }
   .contact-form {
     display: grid;
     place-content: center;
-    max-width: 50%;
+    width: 100%;
+    max-width: 100%;
     margin-inline: auto;
+    @include m.for-desktop(w.$desktop) {
+      min-width: 80%;
+    }
   }
 
   label,
@@ -66,10 +79,11 @@ const { justify } = Astro.props;
 
   input,
   textarea {
-    font-weight: 900;
+    font-weight: 500;
     letter-spacing: 1px;
-    background-color: rgb(49, 49, 49);
-    color: var(--color-fg);
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+    border: 1px inset var(--color-fg);
     padding: 0.5rem;
     border-radius: 0.1rem;
   }
