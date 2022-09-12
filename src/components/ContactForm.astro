@@ -1,27 +1,76 @@
-<form action="submit">
-  <label for="name">Name</label>
-  <input
-    name="name"
-    type="text"
-    placeholder="Name"
-  />
-  <label for="email">Email</label>
-  <input
-    name="name"
-    type="text"
-    placeholder="Email"
-  />
-  <label for="phone">Phone</label>
-  <input
-    name="phone"
-    type="number"
-    placeholder="Email"
-  />
-  <label for="message">Message</label>
-  <textarea
-    name="message"
-    placeholder="Message"
-    id="message"
-    cols="30"
-    rows="10"></textarea>
-</form>
+---
+const { justify } = Astro.props;
+---
+
+<div
+  class="form-wrapper"
+  style={`justify-content: ${justify};`}
+>
+  <form
+    class="contact-form"
+    action="submit"
+  >
+    <label for="name">Name</label>
+    <input
+      name="name"
+      type="text"
+      placeholder="Name"
+    />
+    <label for="email">Email</label>
+    <input
+      name="name"
+      type="text"
+      placeholder="Email"
+    />
+    <label for="phone">Phone</label>
+    <input
+      name="phone"
+      type="number"
+      placeholder="Email"
+    />
+    <label for="message">Message</label>
+    <textarea
+      name="message"
+      placeholder="Message"
+      id="message"
+      cols="30"
+      rows="10"></textarea>
+    <button
+      class="btn nav__btn"
+      type="submit">Send</button
+    >
+  </form>
+</div>
+
+<style lang="scss">
+  .form-wrapper {
+    display: grid;
+    justify-content: center;
+  }
+  .contact-form {
+    display: grid;
+    place-content: center;
+    max-width: 50%;
+    margin-inline: auto;
+  }
+
+  label,
+  input {
+    margin-block-end: 0.5rem;
+  }
+
+  .btn {
+    margin-block-start: 1rem;
+    max-width: 50%;
+  }
+
+  input,
+  textarea {
+    font-weight: 900;
+    letter-spacing: 1px;
+    background-color: rgb(49, 49, 49);
+    color: var(--color-fg);
+    padding: 0.5rem;
+    border-radius: 0.1rem;
+  }
+</style>

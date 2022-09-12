@@ -3,16 +3,24 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import CompProjects from "../components/CompProjects.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <BaseLayout>
   <Hero />
   <h2 class="projects-title">Comiled with love</h2>
   <CompProjects />
+  <div class="contact-form">
+    <ContactForm justify="left" />
+  </div>
 </BaseLayout>
 
 <style>
   .projects-title {
     margin-block: 4rem;
+  }
+
+  .contact-form {
+    margin-block-start: 4rem;
   }
 </style>
