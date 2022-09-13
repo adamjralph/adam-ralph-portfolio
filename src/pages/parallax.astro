@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <h5>Parallax</h5>
+  <div class="parallax">
+    <div class="parallax__layer parallax__layer--back"></div>
+    <div class="parallax__layer parallax__layer--base"></div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  h5 {
+    width: 100%;
+    margin-inline: auto;
+  }
+</style>
