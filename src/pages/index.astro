@@ -9,7 +9,7 @@ import ContactForm from "../components/ContactForm.astro";
 <BaseLayout>
   <Hero />
   <div class="skills">
-    <div class="code-block">
+    <div class="skills-title">
       <svg
         class="code brand-icon"
         fill="currentColor"
@@ -20,7 +20,7 @@ import ContactForm from "../components/ContactForm.astro";
           d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
         ></path>
       </svg>
-      <h3 class="skills-heading">code creation</h3>
+      <h3 class="skills-heading">tools</h3>
     </div>
     <div class="skill-block">
       <p>HTML5</p>
@@ -97,27 +97,30 @@ import ContactForm from "../components/ContactForm.astro";
   }
 
   .skills {
-    margin-block-start: 3rem;
     display: grid;
+    margin-block-start: 3rem;
+    place-items: center;
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 20px;
+    margin-inline: auto;
   }
 
   .skills * ~ * {
     margin-block-end: 2rem;
   }
 
-  .code-block {
+  .skills-title {
+    grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
-    grid-column: 1 / span 2;
-    max-width: 50%;
+    width: 40%;
     align-items: center;
     text-align: center;
-    margin-block-end: 1rem;
     margin-inline: auto;
 
     .code {
+      width: 40%;
+      max-width: 8rem;
       margin-block-end: 1rem;
     }
   }
@@ -127,15 +130,11 @@ import ContactForm from "../components/ContactForm.astro";
   }
 
   .skill-block {
+    width: 50%;
+    max-width: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    &:nth-of-type(odd) {
-      align-items: flex-end;
-    }
-    &:nth-of-type(even) {
-      align-items: flex-start;
-    }
 
     p {
       margin-block-end: 1rem;
