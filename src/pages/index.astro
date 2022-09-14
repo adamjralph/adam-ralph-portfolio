@@ -98,7 +98,7 @@ import ContactForm from "../components/ContactForm.astro";
 
   .skills {
     display: grid;
-    margin-block-start: 5rem;
+    margin-block-start: 6rem;
     place-items: center;
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 20px;
@@ -127,11 +127,11 @@ import ContactForm from "../components/ContactForm.astro";
   }
 
   .brand-icon {
-    max-width: 50%;
+    max-width: 45%;
   }
 
   .skill-block {
-    width: 70%;
+    width: 100%;
     max-width: 200px;
     display: flex;
     flex-direction: column;
@@ -144,6 +144,10 @@ import ContactForm from "../components/ContactForm.astro";
     h3 {
       margin-block-start: 1rem;
     }
+
+    // &:nth-last-of-type(odd) {
+    //   margin-inline-start: 1rem;
+    // }
   }
 
   .more {
