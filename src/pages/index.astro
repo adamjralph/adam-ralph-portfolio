@@ -98,7 +98,7 @@ import ContactForm from "../components/ContactForm.astro";
 
   .skills {
     display: grid;
-    margin-block-start: 3rem;
+    margin-block-start: 5rem;
     place-items: center;
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 20px;
@@ -113,7 +113,8 @@ import ContactForm from "../components/ContactForm.astro";
     grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 70%;
+    max-width: 200px;
     align-items: center;
     text-align: center;
     margin-inline: auto;
@@ -130,14 +131,15 @@ import ContactForm from "../components/ContactForm.astro";
   }
 
   .skill-block {
-    width: 50%;
-    max-width: 8rem;
+    width: 70%;
+    max-width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     p {
       margin-block-end: 1rem;
+      text-align: center;
     }
     h3 {
       margin-block-start: 1rem;
