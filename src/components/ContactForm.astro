@@ -11,6 +11,7 @@ const { justify } = Astro.props;
     class="contact-form"
     action="submit"
   >
+    <h3>Get in touch</h3>
     <label for="name">Name</label>
     <input
       name="name"
@@ -51,12 +52,6 @@ const { justify } = Astro.props;
     display: none;
   }
 
-  .form-wrapper {
-    // display: grid;
-    // justify-content: center;
-    // width: 100%;
-    // margin-inline: auto;
-  }
   .contact-form {
     display: grid;
     // place-content: center;
@@ -69,7 +64,8 @@ const { justify } = Astro.props;
   }
 
   label,
-  input {
+  input,
+  h3 {
     margin-block-end: 0.8rem;
   }
 
