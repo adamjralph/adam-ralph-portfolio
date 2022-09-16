@@ -1,0 +1,41 @@
+---
+import MobileMenu from "../components/MobileMenu.astro";
+import DesktopMenu from "../components/DesktopMenu.astro";
+import "../styles/global.scss";
+import "../styles/header.scss";
+---
+
+<header
+  id="header"
+  class="header"
+>
+  <div class="nav-small">
+    <MobileMenu />
+  </div>
+  <div class="nav-large">
+    <DesktopMenu />
+  </div>
+
+  <div class="logo-desktop">
+    <h1 class="logo-desktop__heading">adam</h1>
+  </div>
+</header>
+
+<style lang="scss">
+  @use "../styles/mixins" as m;
+  @use "../styles/variables" as w;
+
+  .nav-large {
+    display: none;
+    @include m.for-mobile(w.$desktop) {
+      display: block;
+    }
+  }
+
+  .nav-small {
+    display: block;
+    @include m.for-mobile(w.$desktop) {
+      display: none;
+    }
+  }
+</style>

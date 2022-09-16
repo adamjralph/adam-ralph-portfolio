@@ -1,0 +1,33 @@
+---
+import AboutLayout from "../layouts/AboutLayout.astro";
+const bioActive = "background-color: var(--color-bg); color: var(--color-fg)";
+const aboutActive = "background-color: var(--color-fg); color: var(--color-bg)";
+---
+
+<AboutLayout
+  title={"Adam Ralph | About "}
+  bio={bioActive}
+  about={aboutActive}
+  heading="Hello, friend"
+  btnText="Let's talk"
+>
+  <p>
+    For most of my life I have been the one in my family and circle of friends
+    who was the go to for fixing computers and giving advice on technical
+    purchases. I spent many hours pulling apart and rebuilding PCs, installing
+    operating systems.
+    <br />
+    <br />
+    A few years ago I decided to take this thread and start weaving it more promentently
+    into my life and began to learn and build projects. Now, while still working
+    full time I dedicated as much free times as I can learning and practicing.
+    <br />
+    <br />
+    A few years ago I decided to take this thread and start weaving it more promentently
+    into my life and began to learn and build projects. Now, while still working
+    <br />
+    <br />
+    A few years ago I decided to take this thread and start weaving it more promentently
+    into my life and began to learn and build projects. Now, while still working
+  </p>
+</AboutLayout>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import AnimatedButton from "../components/AnimatedButton.astro";
+const { title, description, heading, about, bio, btnText } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+>
+  <div class="about-container">
+    <h1 class="about-heading">{heading}</h1>
+
+    <div class="about-links">
+      <a href="/about"
+        ><button
+          id="about-btn"
+          class="btn nav__btn nav__link"
+          style={about}>about</button
+        >
+      </a>
+      <a href="/bio"
+        ><button
+          style={bio}
+          class="btn nav__btn nav__link"
+          id="about-active">bio</button
+        >
+      </a>
+    </div>
+    <div class="about-text">
+      <slot />
+    </div>
+    <div class="action">
+      <AnimatedButton btnText={btnText} />
+    </div>
+  </div>
+
+  <style lang="scss">
+    .about-container {
+      display: grid;
+      place-items: center;
+    }
+
+    .about-container * + * {
+      margin-block-start: 2rem;
+    }
+
+    .about-heading {
+      margin-inline: auto;
+    }
+
+    .about-links {
+      height: fit-content;
+      margin: 0;
+      display: grid;
+      gap: 0.4rem;
+      align-items: baseline;
+      justify-content: center;
+      grid-template-columns: 6em 6em;
+    }
+
+    .about-text {
+      width: 80%;
+      margin-inline: auto;
+      font-size: var(--font-size-base);
+      max-width: var(--text-width-block);
+    }
+
+    @keyframes borderRotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .inner-layer {
+      background-color: var(--color-bg);
+      margin: 0.2rem;
+      border: 1px inset var(--color-highlight);
+      border-radius: 5px;
+    }
+
+    .text-layer {
+      align-self: center;
+      justify-self: center;
+      margin-block-end: 0.1em;
+    }
+
+    .action {
+      max-width: 50%;
+      margin-inline: auto;
+    }
+  </style>
+</BaseLayout>

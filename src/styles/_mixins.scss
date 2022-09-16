@@ -1,0 +1,15 @@
+@mixin for-mobile($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin for-tablet($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin for-desktop($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

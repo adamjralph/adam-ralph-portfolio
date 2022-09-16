@@ -1,0 +1,32 @@
+---
+import "../styles/global.scss";
+import "../styles/utilities.scss";
+const {
+  title = "Adam Ralph | Web Developer Portfolio",
+  description = "Web developer portfolio of Adam Ralph",
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta
+  name="description"
+  property="og:description"
+  content={description}
+/>
+<meta
+  name="viewport"
+  content="width=device-width"
+/>
+<meta
+  name="generator"
+  content={Astro.generator}
+/>
+<title>{title}</title>
+
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="/favicon.svg"
+/>
+<script src="https://kit.fontawesome.com/6543bd4db3.js" crossorigin="anonymous"
+></script>
