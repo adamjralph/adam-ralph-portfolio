@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import AnimatedButton from "../components/AnimatedButton.astro";
-const { title, description, heading, about, bio, btnText } = Astro.props;
+const { title, description, heading, about, bio, btnText, btnPath } =
+  Astro.props;
 ---
 
 <BaseLayout
@@ -31,7 +32,10 @@ const { title, description, heading, about, bio, btnText } = Astro.props;
       <slot />
     </div>
     <div class="action">
-      <AnimatedButton btnText={btnText} />
+      <AnimatedButton
+        btnText={btnText}
+        btnPath={btnPath}
+      />
     </div>
   </div>
 
