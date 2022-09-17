@@ -11,13 +11,23 @@ const { title, description } = Astro.props;
       title={title}
       description={description}
     />
-    <style>
+    <style lang="scss">
+      @use "../styles/mixins" as m;
+      @use "../styles/variables" as w;
+
       .wrapper {
-        /* max-width: min(95%, 56.25rem); */
+        width: min(95%, 65%);
         padding-inline: 2rem;
         /* max-width: calc(100% - 4rem); */
         margin-inline: auto;
       }
+
+      // .wrapper {
+      //   display: none;
+      //   @include m.for-desktop(w.$desktop) {
+      //     display: block;
+      //   }
+      // }
       .header-padding {
         height: 5rem;
       }

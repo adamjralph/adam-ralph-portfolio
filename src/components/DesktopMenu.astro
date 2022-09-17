@@ -1,47 +1,48 @@
----
-import "../styles/header.scss";
----
+<!-- Navigation Tablet/Desktop -->
+<nav class="nav">
+  <div class="logo">
+    <a href="/">
+      <h1 class="logo-heading text-gradient">adam</h1>
+    </a>
+  </div>
 
-<div class="container">
-  <header
-    id="header"
-    class="header"
-  >
-    <!-- Navigation Tablet/Desktop -->
-    <div class="logo-desktop">
-      <h1 class="logo-desktop__heading">adam</h1>
-    </div>
+  <!-- Social links -->
 
-    <!-- Social links -->
+  <!-- Navigation -->
+  <div class="links">
+    <a
+      href="/about"
+      class="link nav__link">about</a
+    >
+    <a
+      href="/projects"
+      class="link nav__link">projects</a
+    >
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <a
-        href="#about"
-        class="nav__link">about</a
-      >
-      <a
-        href="#projects"
-        class="nav__link">projects</a
-      >
+    <a href="#contact"
+      ><button class="btn nav__btn nav__link contact">Lets Talk</button>
+    </a>
+  </div>
+</nav>
 
-      <a href="#contact"
-        ><button class="btn nav__btn nav__link">Lets Talk</button>
-      </a>
-    </nav>
-  </header>
-</div>
+<style lang="scss">
+  .nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-block-start: 2rem;
+  }
 
-<div class="container">
-  <header
-    id="header"
-    class="header"
-  >
-    <!-- Navigation Tablet/Desktop -->
-    <div class="logo-desktop">
-      <h1 class="logo-desktop__heading">adam</h1>
-    </div>
+  .links {
+    display: flex;
+    align-items: baseline;
 
-    <!-- Social links -->
-  </header>
-</div>
+    .link {
+      margin-inline-end: 1rem;
+    }
+  }
+  .contact {
+    width: 100%;
+    // margin-inline-end: 0;
+  }
+</style>
