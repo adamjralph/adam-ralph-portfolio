@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="message">
+    <p
+      >Message sent successfully.<br /> Thank you, will get back to you soon!
+    </p>
+    <a
+      class="btn nav__link nav__btn"
+      href="/">Back</a
+    >
+  </div>
+</BaseLayout>
+
+<style>
+  .message {
+    display: grid;
+    height: 50vh;
+  }
+  p {
+    place-self: center;
+    text-align: center;
+    color: #4bb543;
+    background-color: #333;
+    padding: 3rem;
+    border-radius: 5px;
+  }
+
+  a {
+    place-self: center;
+    max-width: 5rem;
+    text-align: center;
+  }
+</style>

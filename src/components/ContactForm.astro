@@ -9,7 +9,7 @@ const { justify } = Astro.props;
   <form
     id="contact"
     class="contact-form"
-    action="submit"
+    action="/success"
     method="POST"
     data-netlify="true"
   >
@@ -19,12 +19,14 @@ const { justify } = Astro.props;
       name="name"
       type="text"
       placeholder="Name"
+      required
     />
     <label for="email">Email</label>
     <input
       name="name"
       type="text"
       placeholder="Email"
+      required
     />
     <label for="phone">Phone</label>
     <input
@@ -36,6 +38,7 @@ const { justify } = Astro.props;
     <textarea
       name="message"
       placeholder="Message"
+      required
       id="message"
       cols="30"
       rows="7"></textarea>

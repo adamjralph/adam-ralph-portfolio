@@ -1,3 +1,7 @@
+---
+import ThemeSelection from "./ThemeSelection.astro";
+---
+
 <!-- Navigation Tablet/Desktop -->
 <nav class="nav">
   <div class="logo">
@@ -6,9 +10,6 @@
     </a>
   </div>
 
-  <!-- Social links -->
-
-  <!-- Navigation -->
   <div class="links">
     <a
       href="/about"
@@ -22,6 +23,9 @@
     <a href="#contact"
       ><button class="btn nav__btn nav__link contact">Lets Talk</button>
     </a>
+    <div class="theme-toggle">
+      <ThemeSelection />
+    </div>
   </div>
 </nav>
 
@@ -40,9 +44,14 @@
     .link {
       margin-inline-end: 1rem;
     }
+    .contact {
+      width: 100%;
+    }
   }
-  .contact {
-    width: 100%;
-    // margin-inline-end: 0;
+  .theme-toggle {
+    z-index: 2;
+    position: absolute;
+    top: 2rem;
+    right: 5.5rem;
   }
 </style>
