@@ -5,15 +5,15 @@ import ThemeSelection from "./ThemeSelection.astro";
 
 <div class="nav">
   <div class="logo">
+    <div class="theme-toggle">
+      <ThemeSelection />
+    </div>
     <a href="/">
       <h1 class="logo-heading text-gradient">adam</h1>
     </a>
-    <div class="theme">
-      <ThemeSelection />
-    </div>
   </div>
   <div class="social">
-    <!-- <SocialLinks /> -->
+    <SocialLinks />
   </div>
   <div class="links">
     <a
@@ -37,154 +37,236 @@ import ThemeSelection from "./ThemeSelection.astro";
   <div class="social">
     <SocialLinks />
   </div>
-  <button
-    class="nav-toggle"
-    aria-label="open navigation"
-  >
-    <span class="hamburger"></span>
-  </button>
+  <div class="hamburger-menu">
+    <button
+      class="nav-toggle"
+      aria-label="open navigation"
+    >
+      <span class="hamburger"></span>
+    </button>
+    <nav class="mobile-nav">
+      <div class="theme-toggle">
+        <ThemeSelection />
+      </div>
+      <a
+        href="/"
+        class="nav__link nav__link--text">home</a
+      >
+      <a
+        href="/about"
+        class="nav__link nav__link--text">about</a
+      >
+      <a
+        href="/projects"
+        class="nav__link nav__link--text">projects</a
+      >
+      <a href="/contact"><button class="btn nav__btn">Lets Talk</button></a>
+
+      <div class="social-mobile">
+        <SocialLinks />
+      </div>
+    </nav>
+
+    <div class="logo-mobile">
+      <a href="/">
+        <h1 class="text-gradient logo-mobile__heading">adam</h1>
+      </a>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
   @use "../styles/mixins" as m;
   @use "../styles/variables" as w;
   .nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, 10vh);
-    height: 50vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(10, 10vh);
+    // height: 50vh;
 
     margin-inline: auto;
     width: 100%;
     @include m.for-tablet(w.$tablet) {
       display: flex;
+      flex-direction: row;
       align-items: baseline;
+      justify-content: baseline;
       height: auto;
     }
-    // justify-content: space-between;
-    // position: relative;
-    // display: grid;
-    // grid-template-columns: 7fr 2fr 1fr;
-    // grid-template-columns: 70% 20% 10%;
-    // grid-template-columns: 70vw 20vw 10vw;
+  }
+  // justify-content: space-between;
+  // position: relative;
+  // display: grid;
+  // grid-template-columns: 7fr 2fr 1fr;
+  // grid-template-columns: 70% 20% 10%;
+  // grid-template-columns: 70vw 20vw 10vw;
 
-    // grid-template-rows: 1fr;
-    // justify-content: space-between;
+  // grid-template-rows: 1fr;
+  // justify-content: space-between;
 
-    .logo {
-      grid-column: 3;
-      grid-row: 1;
-      place-self: start end;
-      @include m.for-tablet(w.$tablet) {
-        flex-grow: 1;
-      }
+  .logo {
+    display: none;
+    @include m.for-tablet(w.$tablet) {
+      display: block;
+      flex-grow: 1;
+    }
+  }
+
+  .theme-toggle {
+    @include m.for-tablet(w.$tablet) {
+      position: absolute;
+      display: inline;
+      margin-block-start: 1.2rem;
+      margin-inline-start: 6rem;
+    }
+  }
+
+  .links * ~ * {
+    margin-block-start: 1rem;
+    @include m.for-tablet(w.$tablet) {
+      margin-inline-start: 1rem;
+    }
+  }
+
+  .links {
+    @include m.for-tablet(w.$tablet) {
+      display: block;
+    }
+    // place-self: baseline end;
+    // margin-inline-end: 0;
+    display: none;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // grid-column: 2;
+    // grid-row: 2;
+    // margin-inline: auto;
+    // place-self: baseline end;
+  }
+
+  .contact-wrapper {
+    @include m.for-tablet(w.$tablet) {
+      display: block;
+      margin-inline-start: 1rem;
+      place-self: baseline;
+    }
+    display: none;
+    grid-column: 2;
+    grid-row: 3;
+    place-self: center;
+    // margin-block-start: 1rem;
+    // place-self: baseline end;
+  }
+
+  .contact {
+    @include m.for-tablet(w.$tablet) {
+      padding-inline: 0.5em;
+    }
+    padding-inline: 0.2em;
+  }
+
+  .social {
+    @include m.for-tablet(w.$tablet) {
+    }
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    // margin-block-start: 1.5rem;
+    grid-column: 2;
+    grid-row: 4;
+    place-self: start;
+    margin-block-start: 1rem;
+  }
+
+  // Mobile menu
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-start: 2rem;
+    height: 1rem;
+    transition: all 0.3s ease;
+    margin-inline: auto;
+    width: 100%;
+    @include m.for-tablet(w.$tablet) {
+      display: none;
+    }
+  }
+  .nav-toggle {
+    // flex-grow: 1;
+    @include m.for-tablet(w.$tablet) {
+      display: none;
     }
 
-    .theme {
-      align-self: center;
-      @include m.for-tablet(w.$tablet) {
-      }
-    }
+    cursor: pointer;
+    border: 0;
+    width: 2rem;
+    height: 2.5rem;
+    padding: 0;
+    margin-block-start: 0.4rem;
+    border-radius: 50%;
+    background: var(--color-bg);
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    height: 0.1rem;
+    background: var(--color-fg);
+    z-index: 1;
+  }
 
-    .links * ~ * {
-      margin-block-start: 1rem;
-      @include m.for-tablet(w.$tablet) {
-        margin-inline-start: 1rem;
-      }
-    }
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    width: 100%;
+  }
 
-    .links {
-      @include m.for-tablet(w.$tablet) {
-        display: block;
-      }
-      // place-self: baseline end;
-      // margin-inline-end: 0;
+  .hamburger::before {
+    transform: translateY(-7px);
+  }
+
+  .hamburger::after {
+    transform: translateY(5px);
+  }
+
+  .mobile-nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-400px);
+    transition: transform 0.3s ease-in-out;
+
+    &--visible {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      grid-column: 2;
-      grid-row: 2;
-      margin-inline: auto;
-      place-self: baseline end;
-    }
-
-    .contact-wrapper {
-      @include m.for-tablet(w.$tablet) {
-        display: block;
-        margin-inline-start: 1rem;
-        place-self: baseline;
-      }
-      grid-column: 2;
-      grid-row: 3;
-      place-self: center;
-      // margin-block-start: 1rem;
-      // place-self: baseline end;
-    }
-
-    .contact {
-      @include m.for-tablet(w.$tablet) {
-        padding-inline: 0.5em;
-      }
-      padding-inline: 0.2em;
-    }
-
-    .social {
-      @include m.for-tablet(w.$tablet) {
-        display: none;
-      }
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-      // margin-block-start: 1.5rem;
-      grid-column: 2;
-      grid-row: 4;
-      place-self: start;
-      margin-block-start: 1rem;
-    }
-
-    // Mobile menu
-    .nav-toggle {
-      grid-column: 1;
-      grid-row: 1;
-      place-self: start;
-      @include m.for-tablet(w.$tablet) {
-        display: none;
-      }
-
-      cursor: pointer;
-      border: 0;
-      width: 2rem;
-      height: 2.5rem;
-      padding: 0;
-      margin-block-start: 0.4rem;
-      border-radius: 50%;
-      background: var(--color-bg);
+      justify-content: flex-start;
+      width: 100%;
+      height: 70vh;
+      visibility: visible;
+      opacity: 1;
       left: 0;
       top: 0;
-      z-index: 1;
+      margin-block-start: 8rem;
+      padding-block-start: 5rem;
+      background: var(--color-bg);
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+      z-index: 2;
     }
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      display: block;
-      height: 0.1rem;
-      background: var(--color-fg);
-      z-index: 1;
-    }
+  }
 
-    .hamburger::before,
-    .hamburger::after {
-      content: "";
-      width: 100%;
-    }
-
-    .hamburger::before {
-      transform: translateY(-7px);
-    }
-
-    .hamburger::after {
-      transform: translateY(5px);
-    }
+  .nav-transition {
+    padding-block-start: 1.5rem;
+    padding-inline: 1.5rem;
+    transition: padding 0.3s ease;
   }
 </style>
