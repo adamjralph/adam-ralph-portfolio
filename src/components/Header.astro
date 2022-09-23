@@ -1,0 +1,88 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+import ThemeSelection from "./ThemeSelection.astro";
+---
+
+<div class="nav">
+  <div class="logo">
+    <a href="/">
+      <h1 class="logo-heading text-gradient">adam</h1>
+    </a>
+    <div class="theme">
+      <ThemeSelection />
+    </div>
+  </div>
+  <div class="social">
+    <!-- <SocialLinks /> -->
+  </div>
+  <div class="links">
+    <a
+      href="/"
+      class="link nav__link">home</a
+    >
+    <a
+      href="/about"
+      class="link nav__link">about</a
+    >
+    <a
+      href="/projects"
+      class="link nav__link">projects</a
+    >
+  </div>
+  <div class="contact-wrapper">
+    <a href="#contact"
+      ><button class="btn nav__btn nav__link contact">let's talk</button>
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  .nav {
+    display: flex;
+    align-items: baseline;
+    // justify-content: space-between;
+    // position: relative;
+    // display: grid;
+    // grid-template-columns: 7fr 2fr 1fr;
+    // grid-template-columns: 70% 20% 10%;
+    // grid-template-columns: 70vw 20vw 10vw;
+
+    // grid-template-rows: 1fr;
+    // justify-content: space-between;
+
+    .logo {
+      flex-grow: 1;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .theme {
+      align-self: center;
+    }
+
+    .links * ~ * {
+      margin-inline-start: 1rem;
+    }
+
+    .links {
+      // place-self: baseline end;
+      // margin-inline-end: 0;
+
+      // grid-column: 2 / 3;
+      // grid-row: 1 / 2;
+      // margin-inline-end: 0;
+      // place-self: baseline end;
+    }
+
+    .contact-wrapper {
+      grid-column: 3;
+      grid-row: 1;
+      // place-self: baseline end;
+      margin-inline-start: 1rem;
+    }
+
+    .contact {
+      padding-inline: 0.5em;
+    }
+  }
+</style>

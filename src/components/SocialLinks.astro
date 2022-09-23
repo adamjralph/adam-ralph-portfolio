@@ -1,9 +1,20 @@
+---
+const { iconSize } = Astro.props;
+
+export interface iconSize {
+  iconSize: string;
+  default: "fa-2xl";
+}
+---
+
 <!-- Twitter -->
 <a
   href="http://twitter.com/adamjralph"
   class="link link-twitter"
 >
-  <i class="fa-brands fa-twitter fa-xl icon icon-twitter"></i>
+  <i
+    class="fa-brands fa-twitter fa-xl icon icon-twitter"
+    class={iconSize}></i>
 </a>
 <!-- Youtube-->
 <a
