@@ -21,9 +21,9 @@ import "../styles/global.scss";
   @use "../styles/variables" as w;
 
   .nav-large {
-    visibility: hidden;
+    display: none;
     @include m.for-mobile(w.$mobile) {
-      visibility: visible;
+      display: block;
     }
   }
 
