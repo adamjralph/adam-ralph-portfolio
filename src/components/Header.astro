@@ -37,41 +37,41 @@ import ThemeSelection from "./ThemeSelection.astro";
   <div class="social">
     <SocialLinks />
   </div>
-  <div class="hamburger-menu">
-    <button
-      class="nav-toggle"
-      aria-label="open navigation"
-    >
-      <span class="hamburger"></span>
-    </button>
-    <nav class="mobile-nav">
-      <div class="theme-toggle">
+</div>
+<div class="hamburger-menu">
+  <button
+    class="nav-toggle"
+    aria-label="open navigation"
+  >
+    <span class="hamburger"></span>
+  </button>
+  <nav class="mobile-nav">
+    <!-- <div class="mobile-theme">
         <ThemeSelection />
-      </div>
-      <a
-        href="/"
-        class="nav__link nav__link--text">home</a
-      >
-      <a
-        href="/about"
-        class="nav__link nav__link--text">about</a
-      >
-      <a
-        href="/projects"
-        class="nav__link nav__link--text">projects</a
-      >
-      <a href="/contact"><button class="btn nav__btn">Lets Talk</button></a>
+      </div> -->
+    <a
+      href="/"
+      class="nav__link nav__link--text">home</a
+    >
+    <a
+      href="/about"
+      class="nav__link nav__link--text">about</a
+    >
+    <a
+      href="/projects"
+      class="nav__link nav__link--text">projects</a
+    >
+    <a href="/contact"><button class="btn nav__btn">Lets Talk</button></a>
 
-      <div class="social-mobile">
-        <SocialLinks />
-      </div>
-    </nav>
-
-    <div class="logo-mobile">
-      <a href="/">
-        <h1 class="text-gradient logo-mobile__heading">adam</h1>
-      </a>
+    <div class="social-mobile">
+      <SocialLinks />
     </div>
+  </nav>
+
+  <div class="logo-mobile">
+    <a href="/">
+      <h1 class="text-gradient logo-mobile__heading">adam</h1>
+    </a>
   </div>
 </div>
 
@@ -83,6 +83,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    margin-block-start: 4rem;
 
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-rows: repeat(10, 10vh);
@@ -117,12 +118,12 @@ import ThemeSelection from "./ThemeSelection.astro";
   }
 
   .theme-toggle {
-    @include m.for-tablet(w.$tablet) {
-      position: absolute;
-      display: inline;
-      margin-block-start: 1.2rem;
-      margin-inline-start: 6rem;
-    }
+    // @include m.for-tablet(w.$tablet) {
+    position: absolute;
+    display: inline;
+    margin-block-start: 1.2rem;
+    margin-inline-start: 6rem;
+    // }
   }
 
   .links * ~ * {
@@ -188,7 +189,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-block-start: 2rem;
+    margin-block-start: 1.5rem;
     height: 1rem;
     transition: all 0.3s ease;
     margin-inline: auto;
@@ -251,17 +252,37 @@ import ThemeSelection from "./ThemeSelection.astro";
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      height: 70vh;
+      height: 100vh;
       visibility: visible;
       opacity: 1;
       left: 0;
       top: 0;
-      margin-block-start: 8rem;
-      padding-block-start: 5rem;
+      margin-block-start: 7.5rem;
+      padding-block-start: 10rem;
       background: var(--color-bg);
       transform: translateX(0);
       transition: transform 0.5s ease;
       z-index: 2;
+
+      .mobile-theme {
+        display: inline;
+        // position: relative;
+        margin-inline: auto;
+        width: 100%;
+        z-index: 3;
+      }
+    }
+
+    &--visible > * {
+      margin-block-start: 1rem;
+    }
+
+    .social-mobile {
+      display: flex;
+      align-items: space-between;
+      justify-content: space-between;
+      // width: 100%;
+      margin-inline: auto;
     }
   }
 
