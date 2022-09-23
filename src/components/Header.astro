@@ -52,7 +52,8 @@ import ThemeSelection from "./ThemeSelection.astro";
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(10, 10vh);
-    height: 100vh;
+    height: 50vh;
+
     margin-inline: auto;
     width: 100%;
     @include m.for-tablet(w.$tablet) {
@@ -115,9 +116,9 @@ import ThemeSelection from "./ThemeSelection.astro";
         place-self: baseline;
       }
       grid-column: 2;
-      grid-row: 4;
+      grid-row: 3;
       place-self: center;
-      margin-block-start: 1.5rem;
+      // margin-block-start: 1rem;
       // place-self: baseline end;
     }
 
@@ -137,8 +138,8 @@ import ThemeSelection from "./ThemeSelection.astro";
       gap: 1.5rem;
       // margin-block-start: 1.5rem;
       grid-column: 2;
-      grid-row: 5;
-      place-self: end;
+      grid-row: 4;
+      place-self: start;
       margin-block-start: 1rem;
     }
 
