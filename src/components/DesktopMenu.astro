@@ -4,6 +4,9 @@ import ThemeSelection from "./ThemeSelection.astro";
 
 <!-- Navigation Tablet/Desktop -->
 <nav class="nav">
+  <div class="theme-toggle">
+    <ThemeSelection />
+  </div>
   <div class="logo">
     <a href="/">
       <h1 class="logo-heading text-gradient">adam</h1>
@@ -23,18 +26,23 @@ import ThemeSelection from "./ThemeSelection.astro";
     <a href="#contact"
       ><button class="btn nav__btn nav__link contact">Lets Talk</button>
     </a>
-    <div class="theme-toggle">
-      <ThemeSelection />
-    </div>
   </div>
 </nav>
 
 <style lang="scss">
+  .theme-toggle {
+    // display: grid;
+    // place-items: center;
+  }
+
   .nav {
+    // position: absolute;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-block-start: 2rem;
+    margin-inline: auto;
+    z-index: 3;
   }
 
   .links {
@@ -47,11 +55,5 @@ import ThemeSelection from "./ThemeSelection.astro";
     .contact {
       width: 100%;
     }
-  }
-  .theme-toggle {
-    z-index: 2;
-    position: absolute;
-    top: 2rem;
-    right: 5.5rem;
   }
 </style>

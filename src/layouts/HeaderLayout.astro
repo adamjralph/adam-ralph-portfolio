@@ -9,10 +9,10 @@ import "../styles/global.scss";
   class="header"
 >
   <div class="nav-small">
-    <MobileMenu />
+    <MobileMenu id="mobile" />
   </div>
   <div class="nav-large">
-    <DesktopMenu />
+    <DesktopMenu id="desktop" />
   </div>
 </header>
 
@@ -21,9 +21,9 @@ import "../styles/global.scss";
   @use "../styles/variables" as w;
 
   .nav-large {
-    display: none;
+    visibility: hidden;
     @include m.for-mobile(w.$mobile) {
-      display: block;
+      visibility: visible;
     }
   }
 
