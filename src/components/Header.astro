@@ -53,6 +53,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     @include m.for-tablet(w.$tablet) {
       display: flex;
       align-items: baseline;
+      height: auto;
     }
     // justify-content: space-between;
     // position: relative;
@@ -65,8 +66,9 @@ import ThemeSelection from "./ThemeSelection.astro";
     // justify-content: space-between;
 
     .logo {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
+      grid-column: 3;
+      grid-row: 1;
+      place-self: start end;
       @include m.for-tablet(w.$tablet) {
         flex-grow: 1;
       }
@@ -97,7 +99,7 @@ import ThemeSelection from "./ThemeSelection.astro";
       justify-content: center;
       grid-column: 2;
       grid-row: 2;
-
+      // margin-block-end: 1rem;
       margin-inline: auto;
       place-self: baseline end;
     }
@@ -106,20 +108,27 @@ import ThemeSelection from "./ThemeSelection.astro";
       @include m.for-tablet(w.$tablet) {
         display: block;
         margin-inline-start: 1rem;
+        place-self: baseline;
       }
       grid-column: 2;
       grid-row: 2;
-      place-self: center;
+      place-self: end center;
+      // margin-block-start: 2rem;
+      // place-self: baseline end;
     }
 
     .contact {
       @include m.for-tablet(w.$tablet) {
+        padding-inline: 0.5em;
       }
-      padding-inline: 0.5em;
+      padding-inline: 0.2em;
     }
 
     // Mobile menu
     .nav-toggle {
+      grid-column: 1;
+      grid-row: 1;
+      place-self: start;
       @include m.for-tablet(w.$tablet) {
         display: none;
       }
@@ -129,7 +138,7 @@ import ThemeSelection from "./ThemeSelection.astro";
       width: 2rem;
       height: 2.5rem;
       padding: 0;
-      margin-block-start: 2rem;
+      margin-block-start: 0.4rem;
       border-radius: 50%;
       background: var(--color-bg);
       left: 0;
