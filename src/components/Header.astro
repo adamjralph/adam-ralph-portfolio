@@ -83,12 +83,6 @@ import ThemeSelection from "./ThemeSelection.astro";
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    margin-block-start: 4rem;
-
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: repeat(10, 10vh);
-    // height: 50vh;
-
     margin-inline: auto;
     width: 100%;
     @include m.for-tablet(w.$tablet) {
@@ -99,15 +93,6 @@ import ThemeSelection from "./ThemeSelection.astro";
       height: auto;
     }
   }
-  // justify-content: space-between;
-  // position: relative;
-  // display: grid;
-  // grid-template-columns: 7fr 2fr 1fr;
-  // grid-template-columns: 70% 20% 10%;
-  // grid-template-columns: 70vw 20vw 10vw;
-
-  // grid-template-rows: 1fr;
-  // justify-content: space-between;
 
   .logo {
     display: none;
@@ -118,12 +103,10 @@ import ThemeSelection from "./ThemeSelection.astro";
   }
 
   .theme-toggle {
-    // @include m.for-tablet(w.$tablet) {
     position: absolute;
     display: inline;
     margin-block-start: 1.2rem;
     margin-inline-start: 6rem;
-    // }
   }
 
   .links * ~ * {
@@ -137,16 +120,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     @include m.for-tablet(w.$tablet) {
       display: block;
     }
-    // place-self: baseline end;
-    // margin-inline-end: 0;
     display: none;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
-    // grid-column: 2;
-    // grid-row: 2;
-    // margin-inline: auto;
-    // place-self: baseline end;
   }
 
   .contact-wrapper {
@@ -159,8 +133,6 @@ import ThemeSelection from "./ThemeSelection.astro";
     grid-column: 2;
     grid-row: 3;
     place-self: center;
-    // margin-block-start: 1rem;
-    // place-self: baseline end;
   }
 
   .contact {
@@ -176,7 +148,6 @@ import ThemeSelection from "./ThemeSelection.astro";
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
-    // margin-block-start: 1.5rem;
     grid-column: 2;
     grid-row: 4;
     place-self: start;
@@ -188,8 +159,6 @@ import ThemeSelection from "./ThemeSelection.astro";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-block-start: 1.5rem;
-    height: 1rem;
     transition: all 0.3s ease;
     margin-inline: auto;
     width: 100%;
@@ -197,8 +166,8 @@ import ThemeSelection from "./ThemeSelection.astro";
       display: none;
     }
   }
+
   .nav-toggle {
-    // flex-grow: 1;
     @include m.for-tablet(w.$tablet) {
       display: none;
     }
@@ -256,8 +225,8 @@ import ThemeSelection from "./ThemeSelection.astro";
       opacity: 1;
       left: 0;
       top: 0;
-      margin-block-start: 7.5rem;
-      padding-block-start: 10rem;
+      margin-block-start: 8rem;
+      padding-block-start: 8rem;
       background: var(--color-bg);
       transform: translateX(0);
       transition: transform 0.5s ease;
@@ -265,7 +234,6 @@ import ThemeSelection from "./ThemeSelection.astro";
 
       .mobile-theme {
         display: inline;
-        // position: relative;
         margin-inline: auto;
         width: 100%;
         z-index: 3;
@@ -280,7 +248,6 @@ import ThemeSelection from "./ThemeSelection.astro";
       display: flex;
       align-items: space-between;
       justify-content: space-between;
-      // width: 100%;
       margin-inline: auto;
     }
   }
