@@ -3,10 +3,11 @@ import SocialLinks from "./SocialLinks.astro";
 import ThemeSelection from "./ThemeSelection.astro";
 ---
 
-<div class="theme-toggle">
-  <ThemeSelection />
+<div class="theme-wrapper">
+  <div class="theme-toggle">
+    <ThemeSelection />
+  </div>
 </div>
-
 <div class="nav">
   <div class="logo">
     <a href="/">
@@ -101,10 +102,14 @@ import ThemeSelection from "./ThemeSelection.astro";
     }
   }
 
+  .theme-wrapper {
+    display: grid;
+    place-content: center;
+  }
+
   .theme-toggle {
-    padding-block-end: 1rem;
+    margin-block-end: 1rem;
     padding-block-start: 0;
-    margin: auto;
   }
 
   .links * ~ * {
