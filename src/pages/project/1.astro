@@ -3,5 +3,95 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h3>Project 1</h3>
+  <h2>Evensite - Web development agency</h2>
+  <div class="content-wrapper">
+    <div class="card goals">
+      <h3>Project goals</h3>
+      <p
+        >This site was originally going to be my developer portfolio, but the
+        style I was aiming for seemed much more appropriate for a business, so I
+        decided I would us it to build a site for a web development agency I
+        plan to open some day. When i't's time to open shop I hope to have a
+        good website ready to go. With this site I wanted to build a clean site
+        with very few colors and lots of space. I wanted to the site to hit all
+        the right notes in terms of design such that it visual hierarchy
+      </p>
+    </div>
+    <div class="card image"> an image of the site</div>
+
+    <div class="card build">
+      <h3>Tech stack and build</h3>
+      <p>
+        I used HTML, CSS, Sass and JavaScript and I used a script in my
+        package.json file to compile everything down to my public folder without
+        having to install any packages to do that.
+      </p>
+    </div>
+    <div class="card video">
+      <h3>Presentation</h3>
+    </div>
+
+    <div class="card trials">
+      <h3>Dificultes encountered</h3>
+      <p>
+        With the way I set up the HTML, I had some trouble with naming classes
+        and keeping them both meaningful and consistent.
+      </p>
+    </div>
+    <div class="card learning">
+      <h3>Learning</h3>1
+      <p>
+        I wanted this project to help me get better at CSS and particularly
+        Sass. As a result I was able to learn how to set up partials in folders
+        and how to use _index.scss_ files to forward partials to where they were
+        needed then use @use in each file to namespace the statements I needed.
+        This was very rewarding and I have used and refined this method in other
+        projects since. I also learned the BEM methodology for naming CSS
+        classes.
+      </p>
+    </div>
+    <div class="card plans">
+      <h3>Future plans</h3>
+      <p>
+        As this will be my future agency/freelance site I expect to spend time
+        refining it and experimenting with different design adjustments as I
+        have to time to make something I am really happy with. I would like to
+        refine the CSS to make it more logical and maintainable. I would also
+        like to have some animations on scroll to bring the site alive a bit
+        more, but not too much, this site is all about making a big impact while
+        remaining as understated as possible.
+      </p>
+    </div>
+  </div>
 </BaseLayout>
+
+<style lang="scss">
+  @use "../../styles/mixins" as m;
+  @use "../../styles/variables" as w;
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-block-start: 3rem;
+    @include m.for-tablet(w.$tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    box-shadow: 0 0 3px var(--color-fg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    // color: var(--color-bg);
+    // background-color: var(--color-fg);
+  }
+
+  h3 {
+    padding-block-end: 2rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+</style>
