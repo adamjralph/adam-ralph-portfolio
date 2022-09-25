@@ -1,0 +1,112 @@
+<div class="wrapper">
+  <input
+    name="checkbox"
+    type="checkbox"
+    id="darkmode-toggle"
+  />
+  <label for="darkmode-toggle"></label>
+</div>
+
+<style lang="scss">
+  .wrapper {
+    // display: grid;
+    // place-content: center;
+  }
+
+  .wrapper > * {
+    // grid-column: 1 / -1;
+    // grid-row: 1 / -1;
+  }
+
+  label {
+    width: 2rem;
+    height: 1rem;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0 0.1em 0.3em rgba(0, 0, 0, 0.4),
+      inset 0 -0.1em 0.3em rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  label:after {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    position: absolute;
+    top: 0.1rem;
+    left: 1.1rem;
+    background: linear-gradient(
+      180deg,
+      var(--color-highlight-light),
+      var(--color-highlight)
+    );
+    border-radius: 1rem;
+    box-shadow: 0px 0.1em 0.3em rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  input:checked + label {
+    background: rgb(160, 160, 160);
+  }
+
+  input:checked + label:after {
+    left: 0.9em;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      180deg,
+      var(--color-highlight-light),
+      var(--color-highlight-deep)
+    );
+  }
+  label:active:after {
+    width: 10px;
+  }
+</style>
+
+<script>
+  // Add styles
+  const addCss = (css: string) => {
+    const element = document.createElement("style");
+    element.innerText = css;
+    const newStyle = document.body.appendChild(element);
+    return newStyle;
+  };
+
+  // Dark/Light mode
+  const colorSchemeToggle = document.querySelector("input[name=checkbox]");
+
+  colorSchemeToggle.addEventListener("change", function () {
+    console.log("Checked");
+    if (this.checked) {
+      localStorage.setItem("themeChange-8d23k88", "on");
+    } else {
+      localStorage.removeItem("themeChange-8d23k88");
+    }
+    checkTheme();
+  });
+
+  function checkTheme() {
+    let themeToggle = localStorage.getItem("themeChange-8d23k88");
+    if (themeToggle) {
+      addCss(":root {--color-bg: #ffffff}");
+      addCss(":root {--color-fg: #1b1b1b}");
+      addCss(":root {--color-ds: #1b4bf7}");
+      addCss(":root {--color-ic: #ffffff}");
+    } else {
+      addCss(":root {--color-bg: #1b1b1b}");
+      addCss(":root {--color-fg: #ffffff}");
+      addCss(":root {--color-ds: #ffffff}");
+      addCss(":root {--color-ic: #ffffff}");
+    }
+  }
+  checkTheme();
+</script>
