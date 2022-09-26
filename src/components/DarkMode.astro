@@ -1,19 +1,19 @@
-<div class="wrapper">
-  <input
-    name="checkbox"
-    type="checkbox"
-    id="darkmode-toggle"
-  />
-  <label for="darkmode-toggle"></label>
-</div>
+<!-- <div class="wrapper"> -->
+<input
+  name="checkbox"
+  type="checkbox"
+  id="darkmode-toggle"
+/>
+<label for="darkmode-toggle"></label>
+<!-- </div> -->
 
 <style lang="scss">
-  .wrapper {
-    // margin: 0;
-    // height: auto;
-    // display: grid;
-    // align-items: center;
-  }
+  // .wrapper {
+  // margin: 0;
+  // height: auto;
+  // display: grid;
+  // align-items: center;
+  // }
 
   // .wrapper > * {
   //   grid-column: 1 / -1;
@@ -48,6 +48,7 @@
     border-radius: 1rem;
     box-shadow: 0px 0.1em 0.3em rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    z-index: 3;
   }
 
   input {
@@ -62,6 +63,7 @@
 
   input:checked + label:after {
     left: 0.9em;
+    z-index: 3;
     transform: translateX(-100%);
     background: linear-gradient(
       180deg,
@@ -87,7 +89,6 @@
   const colorSchemeToggle = document.querySelector("input[name=checkbox]");
 
   colorSchemeToggle.addEventListener("change", function () {
-    console.log("Checked");
     if (this.checked) {
       localStorage.setItem("themeChange-8d23k88", "on");
     } else {

@@ -51,7 +51,7 @@ import ThemeSelection from "./ThemeSelection.astro";
         <ThemeSelection />
       </div> -->
     <div class="theme-wrapper">
-      <div class="theme-toggle">
+      <div class="mobile-theme">
         <DarkMode />
       </div>
     </div>
@@ -121,7 +121,7 @@ import ThemeSelection from "./ThemeSelection.astro";
 
   .theme-toggle {
     margin-block-end: 1rem;
-    padding-block-start: 0;
+    // z-index: 2;
   }
 
   .links * ~ * {
@@ -246,13 +246,10 @@ import ThemeSelection from "./ThemeSelection.astro";
       background: var(--color-bg);
       transform: translateX(0);
       transition: transform 0.5s ease;
-      z-index: 2;
+      z-index: 1;
 
       .mobile-theme {
-        display: inline;
-        margin-inline: auto;
-        width: 100%;
-        z-index: 3;
+        margin-block-end: 1rem;
       }
     }
 
