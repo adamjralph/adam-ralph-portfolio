@@ -42,10 +42,6 @@ import ThemeSelection from "./ThemeSelection.astro";
     >
       <span class="hamburger"></span>
     </button>
-
-    <div class="social">
-      <SocialLinks />
-    </div>
   </div>
 </div>
 
@@ -116,6 +112,41 @@ import ThemeSelection from "./ThemeSelection.astro";
       align-items: baseline;
       justify-content: space-between;
     }
+
+    &--visible {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-inline: 1rem;
+      padding-block: 1rem;
+      height: 100vh;
+      @include m.for-tablet(w.$tablet) {
+        display: none;
+      }
+
+      .hamburger-menu {
+        place-self: baseline;
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .logo {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .links {
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .dark-mode {
+        display: block;
+        // grid-column: 2 / 3;
+        // grid-row: 2;
+        // margin-inline: auto;
+      }
+    }
   }
 
   .logo {
@@ -133,6 +164,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     padding-block-end: 0.8rem;
     padding-inline-start: 1rem;
     @include m.for-tablet(w.$tablet) {
+      display: block;
     }
   }
 
@@ -140,11 +172,6 @@ import ThemeSelection from "./ThemeSelection.astro";
   //   display: grid;
   //   place-content: start;
   // }
-
-  .theme-toggle {
-    margin-block-end: 1rem;
-    // z-index: 2;
-  }
 
   .links * ~ * {
     margin-block-start: 1rem;
