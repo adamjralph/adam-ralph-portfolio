@@ -13,6 +13,9 @@ import ThemeSelection from "./ThemeSelection.astro";
       <DarkMode />
     </div>
   </div>
+  <!-- <div class="social">
+    <SocialLinks />
+  </div> -->
   <div class="links">
     <a
       href="/"
@@ -35,82 +38,60 @@ import ThemeSelection from "./ThemeSelection.astro";
   <div class="social">
     <SocialLinks />
   </div>
-  <div class="hamburger-menu">
-    <button
-      class="nav-toggle"
-      aria-label="open navigation"
-    >
-      <span class="hamburger"></span>
-    </button>
+</div>
+<div class="hamburger-menu">
+  <button
+    class="nav-toggle"
+    aria-label="open navigation"
+  >
+    <span class="hamburger"></span>
+  </button>
+  <nav class="mobile-nav">
+    <!-- <div class="mobile-theme">
+        <ThemeSelection />
+      </div> -->
+    <div class="theme-wrapper">
+      <div class="mobile-theme">
+        <DarkMode />
+      </div>
+    </div>
 
-    <div class="social">
+    <a
+      href="/"
+      class="nav__link nav__link--text">home</a
+    >
+    <a
+      href="/about"
+      class="nav__link nav__link--text">about</a
+    >
+    <a
+      href="/projects"
+      class="nav__link nav__link--text">projects</a
+    >
+    <a href="/contact"><button class="btn nav__btn">Lets Talk</button></a>
+
+    <div class="social-mobile">
       <SocialLinks />
     </div>
+  </nav>
+
+  <div class="logo-mobile">
+    <a href="/">
+      <h1 class="text-gradient logo-mobile__heading">adam</h1>
+    </a>
   </div>
 </div>
 
 <style lang="scss">
   @use "../styles/mixins" as m;
   @use "../styles/variables" as w;
-
-  // .nav {
-  //   visibility: hidden;
-  //   opacity: 0;
-  //   position: absolute;
-  //   transform: translateX(-400px);
-  //   transition: transform 0.3s ease-in-out;
-  //   @include m.for-tablet(w.$tablet) {
-  //     visibility: visible;
-  //     opacity: 1;
-  //   }
-
-  //   &--visible {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: flex-start;
-  //     width: 100%;
-  //     height: 100vh;
-  //     visibility: visible;
-  //     opacity: 1;
-  //     left: 0;
-  //     top: 0;
-  //     margin-block-start: 8rem;
-  //     padding-block-start: 6rem;
-  //     background: var(--color-bg);
-  //     transform: translateX(0);
-  //     transition: transform 0.5s ease;
-  //     z-index: 1;
-
-  //     .mobile-theme {
-  //       margin-block-end: 1rem;
-  //     }
-  //   }
-
-  //   &--visible > * {
-  //     margin-block-start: 1rem;
-  //   }
-
-  //   .social-mobile {
-  //     display: flex;
-  //     align-items: space-between;
-  //     justify-content: space-between;
-  //     margin-inline: auto;
-  //   }
-  // }
-
-  .nav-transition {
-    padding-block-start: 1.5rem;
-    padding-inline: 1.5rem;
-    transition: padding 0.3s ease;
-  }
   .nav {
     display: flex;
-    flex-direction: row-reverse;
-    // justify-content: space-between;
-    // align-items: center;
-    // margin-inline: auto;
-    // width: 100%;
+    // flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+    width: 100%;
     @include m.for-tablet(w.$tablet) {
       flex-direction: row;
       align-items: baseline;
@@ -119,7 +100,7 @@ import ThemeSelection from "./ThemeSelection.astro";
   }
 
   .logo {
-    // display: none;
+    display: none;
     @include m.for-tablet(w.$tablet) {
       display: inline-block;
       place-self: baseline;
@@ -129,11 +110,8 @@ import ThemeSelection from "./ThemeSelection.astro";
   }
 
   .dark-mode {
-    display: none;
     padding-block-end: 0.8rem;
     padding-inline-start: 1rem;
-    @include m.for-tablet(w.$tablet) {
-    }
   }
 
   // .theme-wrapper {
@@ -180,9 +158,9 @@ import ThemeSelection from "./ThemeSelection.astro";
   }
 
   .social {
-    display: none;
     @include m.for-tablet(w.$tablet) {
     }
+    display: none;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
     // margin-block-start: 1.5rem;
@@ -243,5 +221,53 @@ import ThemeSelection from "./ThemeSelection.astro";
 
   .hamburger::after {
     transform: translateY(5px);
+  }
+
+  .mobile-nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-400px);
+    transition: transform 0.3s ease-in-out;
+
+    &--visible {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100vh;
+      visibility: visible;
+      opacity: 1;
+      left: 0;
+      top: 0;
+      margin-block-start: 8rem;
+      padding-block-start: 6rem;
+      background: var(--color-bg);
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+      z-index: 1;
+
+      .mobile-theme {
+        margin-block-end: 1rem;
+      }
+    }
+
+    &--visible > * {
+      margin-block-start: 1rem;
+    }
+
+    .social-mobile {
+      display: flex;
+      align-items: space-between;
+      justify-content: space-between;
+      margin-inline: auto;
+    }
+  }
+
+  .nav-transition {
+    padding-block-start: 1.5rem;
+    padding-inline: 1.5rem;
+    transition: padding 0.3s ease;
   }
 </style>
