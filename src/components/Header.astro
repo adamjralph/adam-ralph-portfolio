@@ -1,7 +1,6 @@
 ---
 import DarkMode from "./DarkMode.astro";
 import SocialLinks from "./SocialLinks.astro";
-import ThemeSelection from "./ThemeSelection.astro";
 ---
 
 <div class="nav">
@@ -49,52 +48,6 @@ import ThemeSelection from "./ThemeSelection.astro";
   @use "../styles/mixins" as m;
   @use "../styles/variables" as w;
 
-  // .nav {
-  //   visibility: hidden;
-  //   opacity: 0;
-  //   position: absolute;
-  //   transform: translateX(-400px);
-  //   transition: transform 0.3s ease-in-out;
-  //   @include m.for-tablet(w.$tablet) {
-  //     visibility: visible;
-  //     opacity: 1;
-  //   }
-
-  //   &--visible {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: flex-start;
-  //     width: 100%;
-  //     height: 100vh;
-  //     visibility: visible;
-  //     opacity: 1;
-  //     left: 0;
-  //     top: 0;
-  //     margin-block-start: 8rem;
-  //     padding-block-start: 6rem;
-  //     background: var(--color-bg);
-  //     transform: translateX(0);
-  //     transition: transform 0.5s ease;
-  //     z-index: 1;
-
-  //     .mobile-theme {
-  //       margin-block-end: 1rem;
-  //     }
-  //   }
-
-  //   &--visible > * {
-  //     margin-block-start: 1rem;
-  //   }
-
-  //   .social-mobile {
-  //     display: flex;
-  //     align-items: space-between;
-  //     justify-content: space-between;
-  //     margin-inline: auto;
-  //   }
-  // }
-
   .nav-transition {
     padding-block-start: 1.5rem;
     padding-inline: 1.5rem;
@@ -106,10 +59,7 @@ import ThemeSelection from "./ThemeSelection.astro";
     @include m.for-tablet(w.$tablet) {
       display: flex;
     }
-    // justify-content: space-between;
-    // align-items: center;
-    // margin-inline: auto;
-    // width: 100%;
+
     .logo {
       display: block;
       @include m.for-tablet(w.$tablet) {
@@ -128,11 +78,6 @@ import ThemeSelection from "./ThemeSelection.astro";
         margin-block-end: 0.6rem;
       }
     }
-
-    // .theme-wrapper {
-    //   display: grid;
-    //   place-content: start;
-    // }
 
     .links * ~ * {
       margin-block-start: 1rem;
@@ -181,10 +126,6 @@ import ThemeSelection from "./ThemeSelection.astro";
       padding-inline: 1rem;
       padding-block: 1rem;
       height: 100vh;
-      @include m.for-tablet(w.$tablet) {
-        // opacity: 0;
-      }
-
       .hamburger-menu {
         place-self: baseline;
         grid-column: 1;
@@ -231,14 +172,12 @@ import ThemeSelection from "./ThemeSelection.astro";
     }
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
-    // margin-block-start: 1.5rem;
     grid-column: 2;
     grid-row: 4;
     place-self: start;
     margin-block-start: 1rem;
   }
 
-  // Mobile menu
   .hamburger-menu {
     display: flex;
     align-items: center;
