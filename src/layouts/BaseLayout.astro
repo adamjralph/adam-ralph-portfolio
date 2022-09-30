@@ -62,11 +62,13 @@ const { title, description } = Astro.props;
       const navToggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".nav");
 
-      const navContainer = document.querySelector(".hamburger-menu");
+      // const navLeft = document.querySelector(".hamburger-menu");
+      // const navRight = document.querySelector(".logo");
 
       navToggle.addEventListener("click", () => {
         nav.classList.toggle("nav--visible");
-        // navContainer.classList.toggle("nav-transition");
+        // navLeft.classList.toggle("nav-left");
+        // navRight.classList.toggle("nav-right");
         // hideHero();
       });
 
