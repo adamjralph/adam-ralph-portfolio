@@ -3,44 +3,48 @@ import DarkMode from "./DarkMode.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<div class="nav">
-  <div class="logo">
-    <a href="/">
-      <h1 class="logo-heading text-gradient">adam</h1>
-    </a>
-  </div>
-  <div class="dark-mode">
-    <DarkMode />
-  </div>
-  <div class="links">
-    <a
-      href="/"
-      class="link nav__link">home</a
-    >
-    <a
-      href="/about"
-      class="link nav__link">about</a
-    >
-    <a
-      href="/projects"
-      class="link nav__link">projects</a
-    >
-  </div>
-  <div class="contact-wrapper">
-    <a href="#contact"
-      ><button class="btn nav__btn nav__link contact">let's talk</button>
-    </a>
-  </div>
-  <div class="social">
-    <SocialLinks />
-  </div>
-  <div class="hamburger-menu">
-    <button
-      class="nav-toggle"
-      aria-label="open navigation"
-    >
-      <span class="hamburger"></span>
-    </button>
+<div class="mobile-nav">
+  <div class="nav">
+    <div class="menu-transition">
+      <div class="logo">
+        <a href="/">
+          <h1 class="logo-heading text-gradient">adam</h1>
+        </a>
+      </div>
+      <div class="hamburger-menu">
+        <button
+          class="nav-toggle"
+          aria-label="open navigation"
+        >
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+    <div class="dark-mode">
+      <DarkMode />
+    </div>
+    <div class="links">
+      <a
+        href="/"
+        class="link nav__link">home</a
+      >
+      <a
+        href="/about"
+        class="link nav__link">about</a
+      >
+      <a
+        href="/projects"
+        class="link nav__link">projects</a
+      >
+    </div>
+    <div class="contact-wrapper">
+      <a href="#contact"
+        ><button class="btn nav__btn nav__link contact">let's talk</button>
+      </a>
+    </div>
+    <div class="social">
+      <SocialLinks />
+    </div>
   </div>
 </div>
 
@@ -48,26 +52,48 @@ import SocialLinks from "./SocialLinks.astro";
   @use "../styles/mixins" as m;
   @use "../styles/variables" as w;
 
-  // .nav-left {
-  //   padding-inline-start: 1.5rem;
-  //   padding-block-start: 1.5rem;
-  // }
-  // .nav-right {
-  //   padding-inline-end: 1.5rem;
-  //   padding-block-start: 1.5rem;
-  // }
+  .menu-transition {
+    display: grid;
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(8, 1fr);
+    @include m.for-tablet(w.$tablet) {
+      display: block;
+    }
+    &--padding {
+      background-color: red;
+      padding-inline: 1.5rem;
+      padding-block-start: 1.5rem;
+    }
+    .logo {
+      grid-column: 8;
+      grid-row: 1;
+    }
+
+    .hamburger-menu {
+      grid-column: 1;
+    }
+  }
+
+  .menu-padding {
+    padding-inline: 1.5rem;
+    padding-block-start: 1.5rem;
+    transition: padding 0.3s ease-in;
+  }
+
   .nav {
     display: flex;
     flex-direction: row-reverse;
-    transition: margin 0.3s ease-in;
+    transition: padding 0.3s ease-in;
     @include m.for-tablet(w.$tablet) {
       display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
     }
 
     .logo {
       display: block;
       @include m.for-tablet(w.$tablet) {
-        display: inline-block;
         place-self: baseline;
         display: flex;
         align-items: center;
@@ -113,33 +139,23 @@ import SocialLinks from "./SocialLinks.astro";
       @include m.for-tablet(w.$tablet) {
         padding-inline: 0.5em;
       }
-      // padding-inline: 0.2em
-    }
-
-    @include m.for-tablet(w.$tablet) {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
     }
 
     &--visible {
       display: grid;
-      margin-inline: 1rem;
-      margin-block-start: 1rem;
-      // width: calc(100% - 2rem);
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(12, 1fr);
       height: 100vh;
       .hamburger-menu {
-        place-self: baseline;
+        place-self: start;
         grid-column: 1;
         grid-row: 1;
       }
 
       .logo {
-        grid-column: 3;
+        grid-column: 8;
         grid-row: 1;
+        place-self: baseline end;
       }
 
       .links {
@@ -188,7 +204,8 @@ import SocialLinks from "./SocialLinks.astro";
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    margin-inline: auto;
+    // margin-inline: auto;
+    margin: 0;
     width: 100%;
     @include m.for-tablet(w.$tablet) {
       display: none;

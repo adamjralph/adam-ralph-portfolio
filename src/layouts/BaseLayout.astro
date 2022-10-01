@@ -2,7 +2,6 @@
 import MainHead from "../components/MainHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ThemeSelection from "../components/ThemeSelection.astro";
 const { title, description } = Astro.props;
 ---
 
@@ -62,12 +61,11 @@ const { title, description } = Astro.props;
       const navToggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".nav");
 
-      // const navLeft = document.querySelector(".hamburger-menu");
-      // const navRight = document.querySelector(".logo");
+      const menuTransition = document.querySelector(".menu-transition");
 
       navToggle.addEventListener("click", () => {
         nav.classList.toggle("nav--visible");
-        // navLeft.classList.toggle("nav-left");
+        menuTransition.classList.toggle("menu-padding");
         // navRight.classList.toggle("nav-right");
         // hideHero();
       });
