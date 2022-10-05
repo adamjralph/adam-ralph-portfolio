@@ -98,6 +98,8 @@ import SocialLinks from "./SocialLinks.astro";
         display: flex;
         align-items: center;
       }
+      @include m.for-desktop(w.$desktop) {
+      }
     }
 
     .dark-mode {
@@ -106,6 +108,13 @@ import SocialLinks from "./SocialLinks.astro";
         display: flex;
         place-self: end;
         margin-block-end: 0.6rem;
+      }
+      @include m.for-desktop(w.$desktop) {
+        flex-grow: 1;
+        margin-inline-start: 2rem;
+        align-self: center;
+        margin-block: 0;
+        padding-block: 0;
       }
     }
 
