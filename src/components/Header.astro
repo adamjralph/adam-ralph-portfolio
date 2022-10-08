@@ -88,7 +88,7 @@ import SocialLinks from "./SocialLinks.astro";
       display: flex;
       flex-direction: row;
       align-items: baseline;
-      justify-content: space-between;
+      // justify-content: space-between;
     }
 
     .logo {
@@ -106,14 +106,16 @@ import SocialLinks from "./SocialLinks.astro";
       display: none;
       @include m.for-tablet(w.$tablet) {
         display: flex;
-        place-self: end;
-        margin-block-end: 0.6rem;
+        margin-inline-start: 1rem;
+        align-self: center;
+        margin-block-start: 0.7rem;
+        flex-grow: 1;
       }
       @include m.for-desktop(w.$desktop) {
         flex-grow: 1;
         margin-inline-start: 2rem;
         align-self: center;
-        margin-block-start: 1.5rem;
+        margin-block-start: 0.8rem;
       }
     }
 
@@ -128,6 +130,7 @@ import SocialLinks from "./SocialLinks.astro";
       display: none;
       @include m.for-tablet(w.$tablet) {
         display: block;
+        margin-inline-end: 0.3rem;
       }
     }
 
