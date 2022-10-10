@@ -75,6 +75,9 @@ const { projectsHeading } = Astro.props;
     border: 2px solid var(--color-fg);
     border-radius: 0.2rem;
     padding: 1rem;
+		@include m.for-desktop(w.$desktop) {
+			height: 20rem;
+		}
   }
 
   .card-heading,
