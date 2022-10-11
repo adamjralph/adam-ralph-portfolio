@@ -4,46 +4,54 @@ const { projectsHeading } = Astro.props;
 
 <section>
   <div class="project-grid">
-    <a
-      class="card-link"
-      href="/project/1"
-    >
-      <div class="project-card project-1">
-        <h3 class="card-heading">Project One</h3>
-        <p class="card-text">About the project</p>
-        <div class="card-image card-image-1"></div>
-      </div>
-    </a>
-    <a
-      class="card-link"
-      href="/project/2"
-    >
-      <div class="project-card project-1">
-        <h3 class="card-heading">Project two</h3>
-        <p class="card-text">About the project</p>
-        <div class="card-image card-image-2"></div>
-      </div>
-    </a>
-    <a
-      class="card-link"
-      href="/project/3"
-    >
-      <div class="project-card project-1">
-        <h3 class="card-heading">Project three</h3>
-        <p class="card-text">About the project</p>
-        <div class="card-image card-image-3"></div>
-      </div>
-    </a>
-    <a
-      class="card-link"
-      href="/project/4"
-    >
-      <div class="project-card project-1">
-        <h3 class="card-heading">Project four</h3>
-        <p class="card-text">About the project</p>
-        <div class="card-image card-image-4"></div>
-      </div>
-    </a>
+    <div class="card">
+      <a
+        class="card-link"
+        href="/project/1"
+      >
+        <div class="project-card project0">
+          <h3 class="card-heading">Project One</h3>
+          <p class="card-text">About the project</p>
+          <div class="card-image card-image-1"></div>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a
+        class="card-link"
+        href="/project/2"
+      >
+        <div class="project-card project-1">
+          <h3 class="card-heading">Project two</h3>
+          <p class="card-text">About the project</p>
+          <div class="card-image card-image-2"></div>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a
+        class="card-link"
+        href="/project/3"
+      >
+        <div class="project-card project-1">
+          <h3 class="card-heading">Project three</h3>
+          <p class="card-text">About the project</p>
+          <div class="card-image card-image-3"></div>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a
+        class="card-link"
+        href="/project/4"
+      >
+        <div class="project-card project-1">
+          <h3 class="card-heading">Project four</h3>
+          <p class="card-text">About the project</p>
+          <div class="card-image card-image-4"></div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 <style lang="scss">
@@ -57,11 +65,14 @@ const { projectsHeading } = Astro.props;
     margin-inline: auto;
   }
 
+  .card-link {
+  }
+
   .project-grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
-    @include m.for-mobile(w.$tablet) {
+    @include m.for-tablet(w.$tablet) {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -70,14 +81,24 @@ const { projectsHeading } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
     background-color: var(--color-bg);
     border: 2px solid var(--color-fg);
     border-radius: 0.2rem;
     padding: 1rem;
-		@include m.for-desktop(w.$desktop) {
-			height: 20rem;
-		}
+    @include m.for-tablet(w.$tablet) {
+      height: 15rem;
+    }
+    @include m.for-desktop(w.$desktop) {
+      height: 20rem;
+    }
+  }
+
+  .card:nth-child(n + 3) {
+    border: 5px solid green;
+    .project-card {
+      display: flex;
+    }
   }
 
   .card-heading,
@@ -88,16 +109,25 @@ const { projectsHeading } = Astro.props;
   .card-heading {
     grid-column: 1;
     grid-row: 1;
+    @include m.for-tablet(w.$tablet) {
+      grid-column: 2;
+    }
   }
 
   .card-text {
     grid-column: 1;
     grid-row: 2;
+    @include m.for-tablet(w.$tablet) {
+      grid-column: 2;
+    }
   }
 
   .card-image {
     grid-column: 2;
     grid-row: 1 / 3;
+    @include m.for-tablet(w.$tablet) {
+      grid-column: 1;
+    }
   }
 
   .card-image {
