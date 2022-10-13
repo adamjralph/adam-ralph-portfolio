@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const { title } = Astro.props;
 ---
 
 <BaseLayout>
-  <h2><span class="text-gradient">Web development agency</span></h2>
+  <h2><span class="text-gradient">{title}</span></h2>
   <div class="content-wrapper">
     <div class="card goals">
       <h3>Project goals</h3>

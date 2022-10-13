@@ -1,5 +1,5 @@
 ---
-const { projectsHeading } = Astro.props;
+const { projectTitle } = Astro.props;
 ---
 
 <section>
@@ -11,7 +11,7 @@ const { projectsHeading } = Astro.props;
       >
         <div class="project-card project0">
           <div class="content">
-            <h3 class="card-heading">Project One</h3>
+            <h3 class="card-heading">{projectTitle}</h3>
             <p class="card-text">About the project</p>
           </div>
           <div class="card-image card-image-1"></div>
