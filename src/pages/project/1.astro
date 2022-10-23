@@ -24,7 +24,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </a>
     </div>
     <div class="card goals">
-      <h3>Project goals</h3>
+      <h2>Project goals</h2>
       <p
         >This site was originally going to be my developer portfolio, but the
         style I was aiming for seemed much more appropriate for a business, so I
@@ -37,7 +37,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
 
     <div class="card build">
-      <h3>Tech stack and build</h3>
+      <h2>Tech stack and build</h2>
       <p>
         I used HTML, CSS, Sass and JavaScript and I used a script in my
         package.json file to compile everything down to my public folder without
@@ -47,14 +47,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
 
     <div class="card trials">
-      <h3>Dificultes encountered</h3>
+      <h2>Dificultes encountered</h2>
       <p>
         With the way I set up the HTML, I had some trouble with naming classes
         and keeping them both meaningful and consistent.
       </p>
     </div>
     <div class="card learning">
-      <h3>Learning</h3>
+      <h2>Learning</h2>
       <p>
         I wanted this project to help me get better at CSS and particularly
         Sass. As a result I was able to learn how to set up partials in folders
@@ -66,7 +66,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </div>
     <div class="card plans">
-      <h3>Future plans</h3>
+      <h2>Future plans</h2>
       <p>
         As this will be my future agency/freelance site I expect to spend time
         refining it and experimenting with different design adjustments as I
@@ -112,7 +112,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       box-shadow: 0 0 3px var(--color-fg);
     }
 
-    h3 {
+    h2 {
       margin-block-end: 2rem;
     }
 
@@ -135,8 +135,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     }
 
     .view {
+      display: flex;
+      gap: 0.5rem;
       .btn {
-        width: 30%;
+        width: 100%;
+        padding: 0.5rem;
       }
     }
 
