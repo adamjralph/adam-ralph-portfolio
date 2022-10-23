@@ -5,4 +5,4 @@
 ### To do
 
 - Add header to the page-width container
-- Adjust scaling of text between desk and
+- Adjust scaling of text between desk and mobile sizes

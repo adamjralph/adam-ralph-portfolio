@@ -1,3 +1,6 @@
+@use "../styles/mixins" as m;
+@use "../styles/variables" as w;
+
 :root {
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
@@ -161,4 +164,11 @@ a:visited {
   background-position-y: 100%;
   border-radius: 0.4rem;
   animation: pulse 4s ease-in-out infinite;
+}
+
+p {
+  font-size: var(--font-size-lg);
+  @include m.for-desktop(w.$desktop) {
+    font-size: var(--font-size-base);
+  }
 }
