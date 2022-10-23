@@ -5,7 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <BaseLayout>
   <div class="content-wrapper">
     <h2><span class="text-gradient">Evensite</span></h2>
-    <div class="card video">
+    <div class="card card-border video">
       <iframe
         width="100%"
         height="100%"
@@ -20,7 +20,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <button class="btn nav__btn"> Visit site</button>
       </a>
       <a href="http://github.com/adamjralph"
-        ><button class="btn nav__btn">View source code</button>
+        ><button class="btn nav__btn">View code</button>
       </a>
     </div>
     <div class="card goals">
@@ -35,7 +35,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         the right notes in terms of design such that it visual hierarchy
       </p>
     </div>
-    <div class="card image"> </div>
 
     <div class="card build">
       <h3>Tech stack and build</h3>
@@ -55,7 +54,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </div>
     <div class="card learning">
-      <h3>Learning</h3>1
+      <h3>Learning</h3>
       <p>
         I wanted this project to help me get better at CSS and particularly
         Sass. As a result I was able to learn how to set up partials in folders
@@ -85,26 +84,59 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     @use "../../styles/variables" as w;
 
     .content-wrapper {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       grid-template-columns: 1fr;
       gap: 1rem;
       padding-block-start: 3rem;
       width: 100%;
       margin-inline: auto;
       @include m.for-tablet(w.$tablet) {
-        //   grid-template-columns: repeat(auto-fit, calc(100% / 4));
         max-width: 80%;
-        //   grid-template-rows: repeat(auto-fit, 100%);
+      }
+      @include m.for-desktop(w.$desktop) {
+        max-width: 70%;
       }
     }
 
     .card {
-      box-shadow: 0 0 3px var(--color-fg);
       padding: 1rem;
       border-radius: 0.5rem;
       // color: var(--color-bg);
       @include m.for-tablet(w.$tablet) {
         padding: 2rem;
+      }
+    }
+
+    .card-border {
+      box-shadow: 0 0 3px var(--color-fg);
+    }
+
+    h3 {
+      margin-block-end: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      padding: 0.1rem;
+      @include m.for-tablet(w.$tablet) {
+        height: 400px;
+      }
+      @include m.for-desktop(w.$desktop) {
+        height: 550px;
+      }
+      h3 {
+        margin-block-end: 2rem;
+      }
+      p {
+        line-height: 1.6;
+      }
+    }
+
+    .view {
+      .btn {
+        width: 30%;
       }
     }
 
@@ -168,29 +200,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       //   grid-column: 2 / 3;
       //   grid-row: 3 / 4;
       // }
-    }
-
-    iframe {
-      width: 100%;
-      // height: clamp(25vw, 300px, 550px);
-      height: 250px;
-      // height: min(250px) max(750px);
-
-      // margin-inline: auto;
-      padding: 0.1rem;
-      @include m.for-tablet(w.$tablet) {
-        height: 400px;
-      }
-      @include m.for-desktop(w.$desktop) {
-        height: 550px;
-      }
-      h3 {
-        margin-block-end: 2rem;
-      }
-
-      p {
-        line-height: 1.6;
-      }
     }
   </style>
 </BaseLayout>

@@ -4,7 +4,7 @@ const copyYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="built-with">
+  <!-- <div class="built-with">
     <p class="heading">Built with:</p>
     <div class="tools tools-astro">
       <p class="astro-heading">Astro</p>
@@ -57,14 +57,14 @@ const copyYear = new Date().getFullYear();
         ></path>
       </svg>
     </div>
-  </div>
+  </div> -->
   <p class="build">Latest build: {buildTime}</p>
   <p class="copyright">&copy; {copyYear}</p>
 </footer>
 
 <style lang="scss">
   .footer {
-    background-color: #333;
+    background-color: var(--color-bg);
     // height: 6rem;
     margin-block-start: 5rem;
     padding: 1rem;
