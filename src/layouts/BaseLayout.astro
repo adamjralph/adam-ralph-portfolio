@@ -16,13 +16,11 @@ const { title, description } = Astro.props
             @use "../styles/variables" as w;
 
             .wrapper {
-                width: 100%;
+                width: max(95%, 65%);
                 padding-inline: 1rem;
                 margin-inline: auto;
                 @include m.for-tablet(w.$tablet) {
-                    width: max(95%, 65%);
                     padding-inline: 2rem;
-                    margin-inline: auto;
                 }
                 @include m.for-desktop(w.$desktop) {
                 }
