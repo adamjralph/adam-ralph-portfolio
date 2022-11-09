@@ -1,81 +1,87 @@
 ---
-import MainHead from "../components/MainHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-const { title, description } = Astro.props;
+import MainHead from "../components/MainHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
-  <head>
-    <MainHead
-      title={title}
-      description={description}
-    />
-    <style lang="scss">
-      @use "../styles/mixins" as m;
-      @use "../styles/variables" as w;
+    <head>
+        <MainHead
+            title={title}
+            description={description}
+        />
+        <style lang="scss">
+            @use "../styles/mixins" as m;
+            @use "../styles/variables" as w;
 
-      .wrapper {
-        width: max(95%, 65%);
-        padding-inline: 2rem;
-        /* max-width: calc(100% - 4rem); */
-        margin-inline: auto;
-      }
+            .wrapper {
+                width: 100%;
+                padding-inline: 1rem;
+                margin-inline: auto;
+                @include m.for-tablet(w.$tablet) {
+                    width: max(95%, 65%);
+                    padding-inline: 2rem;
+                    margin-inline: auto;
+                }
+                @include m.for-desktop(w.$desktop) {
+                }
+            }
 
-      // .wrapper {
-      //   display: none;
-      //   @include m.for-desktop(w.$desktop) {
-      //     display: block;
-      //   }
-      // }
-      .top-header-padding {
-        height: 3rem;
-      }
-      .bottom-header-padding {
-        height: 5rem;
-      }
-      // Text styles
-    </style>
-  </head>
+            // .wrapper {
+            //   display: none;
+            //   @include m.for-desktop(w.$desktop) {
+            //     display: block;
+            //   }
+            // }
+            .top-header-padding {
+                height: 3rem;
+            }
+            .bottom-header-padding {
+                height: 5rem;
+            }
+            // Text styles
+        </style>
+    </head>
 
-  <body>
-    <div class="wrapper">
-      <div class="top-header-padding"></div>
-      <Header />
-      <div class="bottom-header-padding"></div>
-      <slot />
+    <body>
+        <div class="wrapper">
+            <div class="top-header-padding"></div>
+            <Header />
+            <div class="bottom-header-padding"></div>
+            <slot />
 
-      <Footer />
-    </div>
-    <script>
-      const hero = document.getElementById("hero");
+            <Footer />
+        </div>
+        <script>
+            const hero = document.getElementById("hero")
 
-      function hideHero() {
-        if (hero.style.opacity === "0") {
-          hero.style.opacity = "1";
-        } else {
-          hero.style.opacity = "0";
-        }
-      }
+            function hideHero() {
+                if (hero.style.opacity === "0") {
+                    hero.style.opacity = "1"
+                } else {
+                    hero.style.opacity = "0"
+                }
+            }
 
-      const navToggle = document.querySelector(".nav-toggle");
-      const nav = document.querySelector(".nav");
+            const navToggle = document.querySelector(".nav-toggle")
+            const nav = document.querySelector(".nav")
 
-      const menuTransition = document.querySelector(".menu-transition");
+            const menuTransition = document.querySelector(".menu-transition")
 
-      navToggle.addEventListener("click", () => {
-        nav.classList.toggle("nav--visible");
-        menuTransition.classList.toggle("menu-padding");
-        // navRight.classList.toggle("nav-right");
-        // hideHero();
-      });
+            navToggle.addEventListener("click", () => {
+                nav.classList.toggle("nav--visible")
+                menuTransition.classList.toggle("menu-padding")
+                // navRight.classList.toggle("nav-right");
+                // hideHero();
+            })
 
-      window.addEventListener("resize", function () {
-        if (window.innerWidth >= 600) {
-          console.log("Bigger than tablet");
-          nav.classList.remove("nav--visible");
-        }
-      });
-    </script>
-  </body>
+            window.addEventListener("resize", function () {
+                if (window.innerWidth >= 600) {
+                    console.log("Bigger than tablet")
+                    nav.classList.remove("nav--visible")
+                }
+            })
+        </script>
+    </body>
 </html>
