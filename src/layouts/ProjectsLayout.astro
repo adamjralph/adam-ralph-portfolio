@@ -1,90 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import type { MarkdownLayoutProps } from "astro"
+
+type Props = MarkdownLayoutProps<{
+    title: string
+    video_url: string
+    demo_url: string
+    github_url: string
+}>
+const { frontmatter } = Astro.props
 ---
 
-<BaseLayout>
-    <slot />
+<BaseLayout title={frontmatter.title}>
     <div class="content-wrapper">
-        <h2><span class="text-gradient">Evensite</span></h2>
+        <h2><span class="text-gradient">{frontmatter.title}</span></h2>
         <div class="card card-border video">
             <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/ZKmLpHHnppE"
+                src={frontmatter.video_url}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
         <div class="card view">
-            <a href="http://evensite.net">
+            <a href={frontmatter.demo_url}>
                 <button class="btn nav__btn"> Visit site</button>
             </a>
-            <a href="http://github.com/adamjralph"
+            <a href={frontmatter.github_url}
                 ><button class="btn nav__btn">View code</button>
             </a>
         </div>
         <div class="card goals">
-            <h2>Project goals</h2>
-            <p
-                >This site was originally going to be my developer portfolio,
-                but the style I was aiming for seemed much more appropriate for
-                a business, so I decided I would us it to build a site for a web
-                development agency I plan to open some day. When i't's time to
-                open shop I hope to have a good website ready to go. With this
-                site I wanted to build a clean site with very few colors and
-                lots of space. I wanted to the site to hit all the right notes
-                in terms of design such that it visual hierarchy
-            </p>
-        </div>
-
-        <div class="card build">
-            <h2>Tech stack and build</h2>
-            <p>
-                I used HTML, CSS, Sass and JavaScript and I used a script in my
-                package.json file to compile everything down to my public folder
-                without having to install any packages to do that.
-            </p>
-            <div class="build-image"> </div>
-        </div>
-
-        <div class="card trials">
-            <h2>Dificultes encountered</h2>
-            <p>
-                With the way I set up the HTML, I had some trouble with naming
-                classes and keeping them both meaningful and consistent.
-            </p>
-        </div>
-        <div class="card learning">
-            <h2>Learning</h2>
-            <p>
-                I wanted this project to help me get better at CSS and
-                particularly Sass. As a result I was able to learn how to set up
-                partials in folders and how to use _index.scss_ files to forward
-                partials to where they were needed then use @use in each file to
-                namespace the statements I needed. This was very rewarding and I
-                have used and refined this method in other projects since. I
-                also learned the BEM methodology for naming CSS classes.
-            </p>
-        </div>
-        <div class="card plans">
-            <h2>Future plans</h2>
-            <p>
-                As this will be my future agency/freelance site I expect to
-                spend time refining it and experimenting with different design
-                adjustments as I have to time to make something I am really
-                happy with. I would like to refine the CSS to make it more
-                logical and maintainable. I would also like to have some
-                animations on scroll to bring the site alive a bit more, but not
-                too much, this site is all about making a big impact while
-                remaining as understated as possible.
-            </p>
+            <slot />
         </div>
     </div>
 
     <style lang="scss">
-        @use "../../styles/mixins" as m;
-        @use "../../styles/variables" as w;
+        @use "../styles/mixins" as m;
+        @use "../styles/variables" as w;
 
         .content-wrapper {
             display: flex;
