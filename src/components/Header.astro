@@ -1,265 +1,267 @@
 ---
-import DarkMode from "./DarkMode.astro";
-import SocialLinks from "./SocialLinks.astro";
+import DarkMode from "./DarkMode.astro"
+import SocialLinks from "./SocialLinks.astro"
 ---
 
 <div class="mobile-nav">
-  <div class="nav">
-    <div class="menu-transition">
-      <div class="logo">
-        <a href="/">
-          <h1 class="logo-heading text-gradient">adam</h1>
-        </a>
-      </div>
-      <div class="hamburger-menu">
-        <button
-          class="nav-toggle"
-          aria-label="open navigation"
-        >
-          <span class="hamburger"></span>
-        </button>
-      </div>
+    <div class="nav">
+        <div class="menu-transition">
+            <div class="logo">
+                <a href="/">
+                    <h1 class="logo-heading text-gradient">adam</h1>
+                </a>
+            </div>
+            <div class="hamburger-menu">
+                <button
+                    class="nav-toggle"
+                    aria-label="open navigation"
+                >
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+        <div class="dark-mode">
+            <DarkMode />
+        </div>
+        <div class="links">
+            <a
+                href="/"
+                class="link nav__link">home</a
+            >
+            <a
+                href="/about"
+                class="link nav__link">about</a
+            >
+            <a
+                href="/projects"
+                class="link nav__link">projects</a
+            >
+        </div>
+        <div class="contact-wrapper">
+            <a href="/contact"
+                ><button class="btn nav__btn nav__link contact"
+                    >let's talk</button
+                >
+            </a>
+        </div>
+        <div class="social">
+            <SocialLinks />
+        </div>
     </div>
-    <div class="dark-mode">
-      <DarkMode />
-    </div>
-    <div class="links">
-      <a
-        href="/"
-        class="link nav__link">home</a
-      >
-      <a
-        href="/about"
-        class="link nav__link">about</a
-      >
-      <a
-        href="/projects"
-        class="link nav__link">projects</a
-      >
-    </div>
-    <div class="contact-wrapper">
-      <a href="#contact"
-        ><button class="btn nav__btn nav__link contact">let's talk</button>
-      </a>
-    </div>
-    <div class="social">
-      <SocialLinks />
-    </div>
-  </div>
 </div>
 
 <style lang="scss">
-  @use "../styles/mixins" as m;
-  @use "../styles/variables" as w;
+    @use "../styles/mixins" as m;
+    @use "../styles/variables" as w;
 
-  .menu-transition {
-    display: grid;
-    grid-column: 1 / 4;
-    grid-template-columns: repeat(8, 1fr);
-    @include m.for-tablet(w.$tablet) {
-      display: block;
+    .menu-transition {
+        display: grid;
+        grid-column: 1 / 4;
+        grid-template-columns: repeat(8, 1fr);
+        @include m.for-tablet(w.$tablet) {
+            display: block;
+        }
+        &--padding {
+            background-color: red;
+            padding-inline: 1.5rem;
+            padding-block-start: 1.5rem;
+        }
+        .logo {
+            grid-column: 8;
+            grid-row: 1;
+        }
+
+        .hamburger-menu {
+            grid-column: 1;
+        }
     }
-    &--padding {
-      background-color: red;
-      padding-inline: 1.5rem;
-      padding-block-start: 1.5rem;
+
+    .menu-padding {
+        padding-inline: 1.5rem;
+        padding-block-start: 1.5rem;
+        transition: padding 0.3s ease-in;
     }
-    .logo {
-      grid-column: 8;
-      grid-row: 1;
+
+    .nav {
+        display: flex;
+        flex-direction: row-reverse;
+        transition: padding 0.3s ease-in;
+        @include m.for-tablet(w.$tablet) {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            // justify-content: space-between;
+        }
+
+        .logo {
+            display: block;
+            @include m.for-tablet(w.$tablet) {
+                place-self: baseline;
+                display: flex;
+                align-items: center;
+            }
+            @include m.for-desktop(w.$desktop) {
+            }
+        }
+
+        .dark-mode {
+            display: none;
+            @include m.for-tablet(w.$tablet) {
+                display: flex;
+                margin-inline-start: 1rem;
+                align-self: center;
+                margin-block-start: 0.7rem;
+                flex-grow: 1;
+            }
+            @include m.for-desktop(w.$desktop) {
+                flex-grow: 1;
+                margin-inline-start: 1rem;
+                align-self: center;
+                margin-block-start: 0.7rem;
+            }
+        }
+
+        .links * ~ * {
+            margin-block-start: 1rem;
+            @include m.for-tablet(w.$tablet) {
+                margin-inline-start: 1rem;
+            }
+        }
+
+        .links {
+            display: none;
+            @include m.for-tablet(w.$tablet) {
+                display: block;
+                margin-inline-end: 0.3rem;
+            }
+        }
+
+        .contact-wrapper {
+            display: none;
+            grid-column: 2;
+            grid-row: 3;
+            place-self: center;
+            @include m.for-tablet(w.$tablet) {
+                display: block;
+                margin-inline-start: 1rem;
+                place-self: baseline;
+            }
+        }
+
+        .contact {
+            @include m.for-tablet(w.$tablet) {
+                padding-inline: 0.5em;
+            }
+        }
+
+        &--visible {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            height: 100vh;
+            .hamburger-menu {
+                place-self: start;
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .logo {
+                grid-column: 8;
+                grid-row: 1;
+                place-self: baseline end;
+            }
+
+            .links {
+                display: grid;
+                grid-column: 2;
+                grid-row: 4;
+            }
+
+            .dark-mode {
+                display: grid;
+                grid-column: 2;
+                grid-row: 3;
+                place-self: center;
+                padding: 0;
+            }
+
+            .contact-wrapper {
+                display: grid;
+                grid-column: 2;
+                grid-row: 5;
+            }
+
+            .social {
+                display: grid;
+                grid-column: 2;
+                grid-row: 6;
+                margin: 0;
+            }
+        }
+    }
+
+    .social {
+        display: none;
+        @include m.for-tablet(w.$tablet) {
+        }
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+        grid-column: 2;
+        grid-row: 4;
+        place-self: start;
+        margin-block-start: 1rem;
     }
 
     .hamburger-menu {
-      grid-column: 1;
-    }
-  }
-
-  .menu-padding {
-    padding-inline: 1.5rem;
-    padding-block-start: 1.5rem;
-    transition: padding 0.3s ease-in;
-  }
-
-  .nav {
-    display: flex;
-    flex-direction: row-reverse;
-    transition: padding 0.3s ease-in;
-    @include m.for-tablet(w.$tablet) {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      // justify-content: space-between;
-    }
-
-    .logo {
-      display: block;
-      @include m.for-tablet(w.$tablet) {
-        place-self: baseline;
         display: flex;
         align-items: center;
-      }
-      @include m.for-desktop(w.$desktop) {
-      }
-    }
-
-    .dark-mode {
-      display: none;
-      @include m.for-tablet(w.$tablet) {
-        display: flex;
-        margin-inline-start: 1rem;
-        align-self: center;
-        margin-block-start: 0.7rem;
-        flex-grow: 1;
-      }
-      @include m.for-desktop(w.$desktop) {
-        flex-grow: 1;
-        margin-inline-start: 1rem;
-        align-self: center;
-        margin-block-start: 0.7rem;
-      }
-    }
-
-    .links * ~ * {
-      margin-block-start: 1rem;
-      @include m.for-tablet(w.$tablet) {
-        margin-inline-start: 1rem;
-      }
-    }
-
-    .links {
-      display: none;
-      @include m.for-tablet(w.$tablet) {
-        display: block;
-        margin-inline-end: 0.3rem;
-      }
-    }
-
-    .contact-wrapper {
-      display: none;
-      grid-column: 2;
-      grid-row: 3;
-      place-self: center;
-      @include m.for-tablet(w.$tablet) {
-        display: block;
-        margin-inline-start: 1rem;
-        place-self: baseline;
-      }
-    }
-
-    .contact {
-      @include m.for-tablet(w.$tablet) {
-        padding-inline: 0.5em;
-      }
-    }
-
-    &--visible {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(12, 1fr);
-      height: 100vh;
-      .hamburger-menu {
-        place-self: start;
-        grid-column: 1;
-        grid-row: 1;
-      }
-
-      .logo {
-        grid-column: 8;
-        grid-row: 1;
-        place-self: baseline end;
-      }
-
-      .links {
-        display: grid;
-        grid-column: 2;
-        grid-row: 4;
-      }
-
-      .dark-mode {
-        display: grid;
-        grid-column: 2;
-        grid-row: 3;
-        place-self: center;
-        padding: 0;
-      }
-
-      .contact-wrapper {
-        display: grid;
-        grid-column: 2;
-        grid-row: 5;
-      }
-
-      .social {
-        display: grid;
-        grid-column: 2;
-        grid-row: 6;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        // margin-inline: auto;
         margin: 0;
-      }
-    }
-  }
-
-  .social {
-    display: none;
-    @include m.for-tablet(w.$tablet) {
-    }
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-    grid-column: 2;
-    grid-row: 4;
-    place-self: start;
-    margin-block-start: 1rem;
-  }
-
-  .hamburger-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    // margin-inline: auto;
-    margin: 0;
-    width: 100%;
-    @include m.for-tablet(w.$tablet) {
-      display: none;
-    }
-  }
-
-  .nav-toggle {
-    @include m.for-tablet(w.$tablet) {
-      display: none;
+        width: 100%;
+        @include m.for-tablet(w.$tablet) {
+            display: none;
+        }
     }
 
-    cursor: pointer;
-    border: 0;
-    width: 2rem;
-    height: 2.5rem;
-    padding: 0;
-    margin-block-start: 0.4rem;
-    border-radius: 50%;
-    background: var(--color-bg);
-    left: 0;
-    top: 0;
-    z-index: 1;
-  }
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after {
-    display: block;
-    height: 0.1rem;
-    background: var(--color-fg);
-    z-index: 1;
-  }
+    .nav-toggle {
+        @include m.for-tablet(w.$tablet) {
+            display: none;
+        }
 
-  .hamburger::before,
-  .hamburger::after {
-    content: "";
-    width: 100%;
-  }
+        cursor: pointer;
+        border: 0;
+        width: 2rem;
+        height: 2.5rem;
+        padding: 0;
+        margin-block-start: 0.4rem;
+        border-radius: 50%;
+        background: var(--color-bg);
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        display: block;
+        height: 0.1rem;
+        background: var(--color-fg);
+        z-index: 1;
+    }
 
-  .hamburger::before {
-    transform: translateY(-7px);
-  }
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        width: 100%;
+    }
 
-  .hamburger::after {
-    transform: translateY(5px);
-  }
+    .hamburger::before {
+        transform: translateY(-7px);
+    }
+
+    .hamburger::after {
+        transform: translateY(5px);
+    }
 </style>

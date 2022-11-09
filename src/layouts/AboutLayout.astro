@@ -40,6 +40,8 @@ const { title, description, heading, about, bio, btnText, btnPath } =
     </div>
 
     <style lang="scss">
+        @use "../styles/mixins" as m;
+        @use "../styles/variables" as w;
         .about-container {
             display: grid;
             place-items: center;
@@ -68,6 +70,19 @@ const { title, description, heading, about, bio, btnText, btnPath } =
             margin-inline: auto;
             font-size: var(--font-size-base);
             max-width: var(--text-width-block);
+        }
+
+        .action {
+            margin-block-start: 3rem;
+            width: 60%;
+            max-width: 9rem;
+            margin-inline: auto;
+            // @include m.for-mobile(w.$mobile) {
+            //     grid-column: 1;
+            //     grid-row: 3 / 4;
+            //     justify-content: start;
+            //     margin: 0;
+            // }
         }
     </style>
 </BaseLayout>
