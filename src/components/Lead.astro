@@ -1,0 +1,79 @@
+---
+const lead = Array.from('let name = "Adam";')
+
+---
+
+<section>
+  <div class="lead-container" id="lead-one">
+  </div>
+  <div class="lead-container" id="lead-two">
+  </div>
+
+</section>
+
+<style lang="scss">
+  .lead-container {
+    display: flex;
+    // flex-direction: column;
+    .letter {
+      font-family: monospace;
+      padding: 0.5rem;
+      animation: fadeInAnimation ease-in 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: backwards;
+      animation-delay: 1.5s;
+      &:hover {
+      }
+    }
+  }
+  
+</style>
+
+<script>
+
+  let i = 0;
+  const txt = Array.from('let name = "Adam";')
+  const txtTwo = Array.from('console.log(name);')
+  let speed = 100; /* The speed/duration of the effect in milliseconds */
+  
+  // function typeWriter() {
+  //   if (i < txt.length) {
+  //     document.getElementById("demo").innerHTML += txt.charAt(i);
+  //     i++;
+  //     setTimeout(typeWriter, speed);
+  //   }
+  // }
+
+  function typeTextOne() {
+    const lineOne = document.getElementById('lead-one') 
+    if (i < txt.length) {
+        let letter = lineOne.appendChild(
+          document.createElement('pre')
+          )
+        letter.classList.add('letter')
+        letter.innerText = txt[i]
+        i++
+        setTimeout(typeTextOne, speed)
+      }
+      typeTextTwo()
+    }
+    
+    
+  typeTextOne()
+
+  function typeTextTwo() {
+    const lineTwo = document.getElementById('lead-two') 
+    
+    if (i < txtTwo.length) {
+        let letter = lineTwo.appendChild(
+          document.createElement('pre')
+          )
+        letter.classList.add('letter')
+        letter.innerText = txtTwo[i]
+        i++
+        setTimeout(typeTextTwo, speed)
+      }
+  }
+
+
+</script>
