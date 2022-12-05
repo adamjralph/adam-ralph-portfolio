@@ -13,11 +13,14 @@ const lead = Array.from('let name = "Adam";')
 
 <style lang="scss">
   .lead-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    max-width: 50%;
     // flex-direction: column;
     .letter {
       font-family: monospace;
-      padding: 0.5rem;
+      padding: 0;
+      margin: 0;
       animation: fadeInAnimation ease-in 2s;
       animation-iteration-count: 1;
       animation-fill-mode: backwards;
@@ -32,8 +35,7 @@ const lead = Array.from('let name = "Adam";')
 <script>
 
   let i = 0;
-  const txt = Array.from('let name = "Adam";')
-  const txtTwo = Array.from('console.log(name);')
+  const txt = 'let name = "Adam";console.log(name);'
   let speed = 100; /* The speed/duration of the effect in milliseconds */
   
   // function typeWriter() {
@@ -48,14 +50,13 @@ const lead = Array.from('let name = "Adam";')
     const lineOne = document.getElementById('lead-one') 
     if (i < txt.length) {
         let letter = lineOne.appendChild(
-          document.createElement('pre')
+          document.createElement('p')
           )
         letter.classList.add('letter')
         letter.innerText = txt[i]
         i++
         setTimeout(typeTextOne, speed)
       }
-      typeTextTwo()
     }
     
     
