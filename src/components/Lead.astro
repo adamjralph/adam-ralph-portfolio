@@ -14,22 +14,22 @@ const lead = Array.from('let name = "Adam";')
 <style lang="scss">
   .lead-container {
     display: grid;
-    grid-template-columns: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1rem);
     max-width: 50%;
     // flex-direction: column;
-    .letter {
-      font-family: monospace;
-      padding: 0;
-      margin: 0;
-      animation: fadeInAnimation ease-in 2s;
-      animation-iteration-count: 1;
-      animation-fill-mode: backwards;
-      animation-delay: 1.5s;
-      &:hover {
-      }
-    }
   }
   
+  .letter {
+    font-family: monospace;
+    // display: flex;
+    // justify-content: center;
+    // margin-inline: auto;
+    // padding: 0;
+    // margin: 0;
+    &:hover {
+      opacity: 0;
+    }
+  }
 </style>
 
 <script>
@@ -52,8 +52,12 @@ const lead = Array.from('let name = "Adam";')
         let letter = lineOne.appendChild(
           document.createElement('p')
           )
-        letter.classList.add('letter')
+        // letter.style.opacity = '0'
+        // letter.style.transition = 'opacity 2s ease' 
+        // letter.style.opacity = '1'
         letter.innerText = txt[i]
+        // letter.classList.toggle('letter-transition')
+        letter.classList.add('letter')
         i++
         setTimeout(typeTextOne, speed)
       }
@@ -62,19 +66,6 @@ const lead = Array.from('let name = "Adam";')
     
   typeTextOne()
 
-  function typeTextTwo() {
-    const lineTwo = document.getElementById('lead-two') 
-    
-    if (i < txtTwo.length) {
-        let letter = lineTwo.appendChild(
-          document.createElement('pre')
-          )
-        letter.classList.add('letter')
-        letter.innerText = txtTwo[i]
-        i++
-        setTimeout(typeTextTwo, speed)
-      }
-  }
 
 
 </script>
