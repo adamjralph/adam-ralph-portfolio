@@ -5,72 +5,84 @@ const lead = Array.from('let name = "Adam";')
 
 <section>
   <div class="lead-container" id="lead-one">
+    <pre class="lead" id="lead"></pre>
   </div>
-  <div class="lead-container" id="lead-two">
-  </div>
-
 </section>
 
 <style lang="scss">
-  .lead-container {
-    display: grid;
-    grid-template-columns: repeat(18, 1rem);
-    max-width: 50%;
-    // flex-direction: column;
-  }
   
-  .letter {
+  .lead {
     font-family: monospace;
-    // display: flex;
-    // justify-content: center;
-    // margin-inline: auto;
-    // padding: 0;
-    // margin: 0;
-    &:hover {
-      opacity: 0;
-    }
+    width: 100%;
+    margin-inline: auto;
   }
 </style>
 
 <script>
 
-  let i = 0;
-  const txt = 'let name = "Adam";console.log(name);'
-  const words = {
-    'l': 'white',
-    'e': 'white',
+
+  const color = {
+    "one": "violet",
+    "two": "darkOrange",
+    "three": "steelblue",
+    "four": "seagreen",
+    "five": "white",
+    "six": "gold"
   }
-  let speed = 100; /* The speed/duration of the effect in milliseconds */
   
-  // function typeWriter() {
-  //   if (i < txt.length) {
-  //     document.getElementById("demo").innerHTML += txt.charAt(i);
-  //     i++;
-  //     setTimeout(typeWriter, speed);
-  //   }
-  // }
+  const txt = [
+    ['c', color.one],
+    ['o', color.one],
+    ['n', color.one],
+    ['s', color.one],
+    ['t', color.one],
+    [' ', null],
+    ['n', color.two],
+    ['a', color.two],
+    ['m', color.two],
+    ['e', color.two],
+    [' ', null],
+    ['=', color.three],
+    [' ', null],
+    ['"', color.four],
+    ['A', color.four],
+    ['d', color.four],
+    ['a', color.four],
+    ['m', color.four],
+    ['"', color.four],
+    [';', null],
+    ['\n', null],
+    ['c', color.five],
+    ['o', color.five],
+    ['n', color.five],
+    ['s', color.five],
+    ['o', color.five],
+    ['l', color.five],
+    ['e', color.five],
+    ['.', color.five],
+    ['l', color.three],
+    ['o', color.three],
+    ['g', color.three],
+    ['(', color.six],
+    ['n', color.five],
+    ['a', color.five],
+    ['m', color.five],
+    ['e', color.five],
+    [')', color.six],
 
-  // Try typing letters instead of elements to get even spacing
-  function typeTextOne() {
-    const lineOne = document.getElementById('lead-one') 
+  ]
+
+  let i = 0;
+  const speed = 100; /* The speed/duration of the effect in milliseconds */
+  
+  function typeLead() {
     if (i < txt.length) {
-        let letter = lineOne.appendChild(
-          document.createElement('p')
-          )
-        // letter.style.opacity = '0'
-        // letter.style.transition = 'opacity 2s ease' 
-        // letter.style.opacity = '1'
-        letter.innerText = txt[i]
-        // letter.classList.toggle('letter-transition')
-        letter.classList.add('letter')
-        i++
-        setTimeout(typeTextOne, speed)
-      }
+      document.getElementById("lead").innerHTML += `<span style="color: ${txt[i][1]}">${txt[i][0]}`
+      i++;
+      setTimeout(typeLead, speed);
     }
-    
-    
-  typeTextOne()
+  }
 
-
+  typeLead()
 
 </script>
