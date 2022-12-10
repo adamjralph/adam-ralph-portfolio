@@ -74,8 +74,17 @@ const lead = Array.from('let name = "Adam";')
   ]
 
   let i = 0;
+  let j = 0
   const speed = 100; 
   
+  // function typeLead() {
+  //   if (i < txt.length) {
+  //     document.getElementById("lead").innerHTML += `<span style="color: ${txt[i][1]}">${txt[i][0]}`
+  //     i++;
+  //     setTimeout(typeLead, speed);
+  //   }
+  // }
+
   function typeLead() {
     if (i < txt.length) {
       document.getElementById("lead").innerHTML += `<span style="color: ${txt[i][1]}">${txt[i][0]}`
@@ -85,5 +94,7 @@ const lead = Array.from('let name = "Adam";')
   }
 
   typeLead()
+
+
 
 </script>
