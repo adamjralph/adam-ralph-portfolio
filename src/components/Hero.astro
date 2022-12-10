@@ -1,5 +1,6 @@
 ---
 import AnimatedButton from "./AnimatedButton.astro"
+import Lead from "./Lead.astro";
 import "../styles/global.scss"
 ---
 
@@ -14,13 +15,16 @@ import "../styles/global.scss"
         <div class="content">
             <h1 class="heading heading-2">
                 Building<span class="text-gradient">
-                    <a href="#"> internet things</a>
+                    <a href="#projects"> internet things</a>
                 </span>
             </h1>
             <p class="text">
                 hand-crafted internet experences for profit and pleasure
             </p>
-            <div class="image"></div>
+            <!-- <div class="image"></div> -->
+            <div class="lead">
+                <Lead />
+            </div>
             <div class="action">
                 <AnimatedButton
                     btnText="Let's talk"
@@ -101,6 +105,13 @@ import "../styles/global.scss"
             max-width: 60%;
             margin: 0;
         }
+    }
+
+    .lead {
+        display: grid;
+        align-content: center;
+        margin-inline: auto;
+        padding-block: 5rem;
     }
 
     .action {
