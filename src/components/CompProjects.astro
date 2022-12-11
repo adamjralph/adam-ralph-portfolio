@@ -1,6 +1,6 @@
 ---
 const { projectTitle } = Astro.props
-const { projectOneTitle = "Evensite" } = Astro.props
+const { projectOneTitle = "Evensite", projectTwoTitle = "Blocklink", projectThreeTitle = "Training Platform" } = Astro.props
 const { frontmatter } = Astro.props
 ---
 
@@ -13,10 +13,9 @@ const { frontmatter } = Astro.props
             >
                 <div class="project-card project0">
                     <div class="content">
-                        <h3 class="card-heading">{projectOneTitle}</h3>
+                        <h3 class="card-heading text-gradient">{projectOneTitle}</h3>
                         <p class="card-text"
-                            >This is an agency website designed to market the
-                            business</p
+                            >Web<br> design agency</p
                         >
                     </div>
                     <div class="card-image card-image-1"></div>
@@ -30,8 +29,8 @@ const { frontmatter } = Astro.props
             >
                 <div class="project-card project-1">
                     <div class="content">
-                        <h3 class="card-heading">Project two</h3>
-                        <p class="card-text">About the project</p>
+                        <h3 class="card-heading text-gradient">{projectTwoTitle}</h3>
+                        <p class="card-text">Crypto <br> blog</p>
                     </div>
                     <div class="card-image card-image-2"></div>
                 </div>
@@ -44,8 +43,8 @@ const { frontmatter } = Astro.props
             >
                 <div class="project-card project-1">
                     <div class="content">
-                        <h3 class="card-heading">Project three</h3>
-                        <p class="card-text">About the project</p>
+                        <h3 class="card-heading text-gradient">{projectThreeTitle}</h3>
+                        <p class="card-text">Workplace training application</p>
                     </div>
                     <div class="card-image card-image-3"></div>
                 </div>
@@ -58,8 +57,8 @@ const { frontmatter } = Astro.props
             >
                 <div class="project-card project-1">
                     <div class="content">
-                        <h3 class="card-heading">Project four</h3>
-                        <p class="card-text">About the project</p>
+                        <h3 class="card-heading text-gradient">Coming soon</h3>
+                        <p class="card-text">Work in progress</p>
                     </div>
                     <div class="card-image card-image-4"></div>
                 </div>
@@ -152,7 +151,7 @@ const { frontmatter } = Astro.props
     }
 
     .card-text {
-        margin-block-start: 3rem;
+        margin-block-start: 2rem;
         @include m.for-tablet(w.$tablet) {
             // grid-column: 2;
         }
