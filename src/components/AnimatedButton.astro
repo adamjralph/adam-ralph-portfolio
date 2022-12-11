@@ -2,7 +2,7 @@
 const { btnText, btnPath } = Astro.props;
 ---
 
-<a href={btnPath}>
+<a href={btnPath} role="button">
   <div class="card">
     <div class="color-layer"></div>
     <div class="inner-layer"></div>
@@ -14,6 +14,10 @@ const { btnText, btnPath } = Astro.props;
   .card > * {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .card {
