@@ -13,12 +13,13 @@ const lead = Array.from('let name = "Adam";')
   .lead-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
   }
+
   .lead {
+    min-width: 100%;
     font-family: monospace;
     font-size: 1.5rem;
-    margin-inline: auto;
   }
 </style>
 
@@ -35,14 +36,6 @@ const lead = Array.from('let name = "Adam";')
     "seven": "indianred",
   }
 
-  const adamjralph = {
-    first: 'Adam',
-    last: 'Ralph',
-    developer: true,
-    city: 'Melbourne',
-    state: 'Victoria',
-    country: 'Australia'
-  }
 
   const txt = [
     ['c', color.one],
@@ -56,7 +49,7 @@ const lead = Array.from('let name = "Adam";')
     ['a', color.two],
     ['m', color.two],
     [' ', null],
-    ['=', color.three],
+    ['=', null],
     [' ', null],
     ['{', color.three],
     ['\n', null],
@@ -168,7 +161,6 @@ const lead = Array.from('let name = "Adam";')
     [',', null],
     ['\n', null],
     ['}', color.three],
-    ['\n', null],
     ['\n', null],
     ['c', color.five],
     ['o', color.five],
