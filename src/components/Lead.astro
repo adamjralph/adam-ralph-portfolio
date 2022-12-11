@@ -10,10 +10,14 @@ const lead = Array.from('let name = "Adam";')
 </section>
 
 <style lang="scss">
+  .lead-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   .lead {
     font-family: monospace;
     font-size: 1.5rem;
-    width: 100%;
     margin-inline: auto;
   }
 </style>
@@ -27,9 +31,19 @@ const lead = Array.from('let name = "Adam";')
     "three": "steelblue",
     "four": "seagreen",
     "five": null,
-    "six": "gold"
+    "six": "gold",
+    "seven": "indianred",
   }
-  
+
+  const adamjralph = {
+    first: 'Adam',
+    last: 'Ralph',
+    developer: true,
+    city: 'Melbourne',
+    state: 'Victoria',
+    country: 'Australia'
+  }
+
   const txt = [
     ['c', color.one],
     ['o', color.one],
@@ -37,12 +51,22 @@ const lead = Array.from('let name = "Adam";')
     ['s', color.one],
     ['t', color.one],
     [' ', null],
-    ['n', color.two],
+    ['a', color.two],
+    ['d', color.two],
     ['a', color.two],
     ['m', color.two],
-    ['e', color.two],
     [' ', null],
     ['=', color.three],
+    [' ', null],
+    ['{', color.three],
+    ['\n', null],
+    ['\t', null],
+    ['f', color.seven],
+    ['i', color.seven],
+    ['r', color.seven],
+    ['s', color.seven],
+    ['t', color.seven],
+    [':', null],
     [' ', null],
     ['"', color.four],
     ['A', color.four],
@@ -50,7 +74,101 @@ const lead = Array.from('let name = "Adam";')
     ['a', color.four],
     ['m', color.four],
     ['"', color.four],
-    [';', null],
+    [',', null],
+    ['\n', null],
+    ['\t', null],
+    ['l', color.seven],
+    ['a', color.seven],
+    ['s', color.seven],
+    ['t', color.seven],
+    [':', null],
+    [' ', null],
+    ['"', color.four],
+    ['R', color.four],
+    ['a', color.four],
+    ['l', color.four],
+    ['p', color.four],
+    ['h', color.four],
+    ['"', color.four],
+    [',', null],
+    ['\n', null],
+    ['\t', null],
+    ['d', color.seven],
+    ['e', color.seven],
+    ['v', color.seven],
+    ['e', color.seven],
+    ['l', color.seven],
+    ['o', color.seven],
+    ['p', color.seven],
+    ['e', color.seven],
+    ['r', color.seven],
+    [':', null],
+    [' ', null],
+    ['t', color.four],
+    ['r', color.four],
+    ['u', color.four],
+    ['e', color.four],
+    [',', null],
+    ['\n', null],
+    ['\t', null],
+    ['c', color.seven],
+    ['i', color.seven],
+    ['t', color.seven],
+    ['y', color.seven],
+    [':', null],
+    [' ', null],
+    ['M', color.four],
+    ['e', color.four],
+    ['l', color.four],
+    ['b', color.four],
+    ['o', color.four],
+    ['u', color.four],
+    ['r', color.four],
+    ['n', color.four],
+    ['e', color.four],
+    [',', null],
+    ['\n', null],
+    ['\t', null],
+    ['s', color.seven],
+    ['t', color.seven],
+    ['a', color.seven],
+    ['t', color.seven],
+    ['e', color.seven],
+    [':', null],
+    [' ', null],
+    ['V', color.four],
+    ['i', color.four],
+    ['c', color.four],
+    ['t', color.four],
+    ['o', color.four],
+    ['r', color.four],
+    ['i', color.four],
+    ['a', color.four],
+    [',', null],
+    ['\n', null],
+    ['\t', null],
+    ['c', color.seven],
+    ['o', color.seven],
+    ['u', color.seven],
+    ['n', color.seven],
+    ['t', color.seven],
+    ['r', color.seven],
+    ['y', color.seven],
+    [':', null],
+    [' ', null],
+    ['A', color.four],
+    ['u', color.four],
+    ['s', color.four],
+    ['t', color.four],
+    ['r', color.four],
+    ['a', color.four],
+    ['l', color.four],
+    ['i', color.four],
+    ['a', color.four],
+    [',', null],
+    ['\n', null],
+    ['}', color.three],
+    ['\n', null],
     ['\n', null],
     ['c', color.five],
     ['o', color.five],
@@ -60,30 +178,24 @@ const lead = Array.from('let name = "Adam";')
     ['l', color.five],
     ['e', color.five],
     ['.', color.five],
+    ['t', color.three],
+    ['a', color.three],
+    ['b', color.three],
     ['l', color.three],
-    ['o', color.three],
-    ['g', color.three],
+    ['e', color.three],
     ['(', color.six],
-    ['n', color.five],
+    ['a', color.five],
+    ['d', color.five],
     ['a', color.five],
     ['m', color.five],
-    ['e', color.five],
     [')', color.six],
 
   ]
 
   let i = 0;
   let j = 0
-  const speed = 100; 
+  const speed = 50; 
   
-  // function typeLead() {
-  //   if (i < txt.length) {
-  //     document.getElementById("lead").innerHTML += `<span style="color: ${txt[i][1]}">${txt[i][0]}`
-  //     i++;
-  //     setTimeout(typeLead, speed);
-  //   }
-  // }
-
   function typeLead() {
     if (i < txt.length) {
       document.getElementById("lead").innerHTML += `<span style="color: ${txt[i][1]}">${txt[i][0]}`
