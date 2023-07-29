@@ -1,10 +1,10 @@
-## Personal Portfolio
+# Personal Portfolio
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3b34335-5a76-4480-b9ee-9a08ccf7e727/deploy-status)](https://app.netlify.com/sites/adam-ralph/deploys)
 
 ## Live version
 
-[Adam Ralph Portfolio](https://adam-ralph.netlify.app
+[Visit site](https://adam-ralph.netlify.app)
 
 ## Requirements
 
@@ -19,7 +19,7 @@ $ npm install
 $ astro dev
 ```
 
-Open browser at 
+### Open browser at:
 ```bash
 http://localhost:3000
 ```
